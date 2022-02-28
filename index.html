@@ -13,11 +13,11 @@
 <h1 style="padding-left: 0.5em">Jingfeng Zhang</h1><hr>
 <td id="layout-menu">
     <div class="menu-item"><a href="index.html" class="current">Home</a></div>
-	<div class="menu-item"><a href="news.html">News</a></div>
-    <div class="menu-item"><a href="research.html">Research</a></div>
-	<div class="menu-item"><a href="group.html">Research Group</a></div>
-	<div class="menu-item"><a href="service.html">Professional Service</a></div>
-    <div class="menu-item"><a href="publication.html">Publications</a></div>
+    <div class="menu-item"><a href="#news">News</a></div>
+    <div class="menu-item"><a href="#research">Research</a></div>
+	<div class="menu-item"><a href="#service">Professional Service</a></div>
+    <div class="menu-item"><a href="#publications">Publications</a></div>
+    <div class="menu-item"><a href="#funding">Funding</a></div>
 </td>
 
 <td id="layout-content">
@@ -29,7 +29,7 @@
         <a href="#edu">Education</a> ]</p>-->
 
     <table class="imgtable"><tr valign="center">
-        <td><img src="jzhangv.jpg" width = '220', height='280' alt="Jingfeng Zhang" /></td>
+        <td><img src="jzhangv.jpg" width = '240', height='300' alt="Jingfeng Zhang" /></td>
         <td align="left">
             <p><span style="font-size: 110%"><b>Jingfeng Zhang (张 景锋)</b></span></p>
             <p>
@@ -53,6 +53,7 @@
                 <a href="https://github.com/zjfheart" target="_blank">[Github]</a><br>
 				<!-- <a href="http://csrankings.org/#/fromyear/2019/toyear/2020/index?ai&mlmining&world" target="_blank">[CSRankings]</a> -->
 				E-mail: jingfeng.zhang@riken.jp / jingfeng.zhang9660@gmail.com<br>
+                <p><font color="#FF0000"><a href="https://trustmlresearch.github.io" target="_blank">TrustML YSS</a> is inviting speakers across the globe, contact me if you are interested!</p>
             </p>
         </td>
     </tr></table>
@@ -60,10 +61,15 @@
     <!-- <p><font color="#FF0000">I am seeking for <b>Assistant Professor</b> or <b>Research Scientist</b>!</font></p> -->
  
  <div>
-        <h2><hr><a name="news"></a>News</h2>
+        <h2 id='news'><hr><a name="news"></a>News</h2>
         <ul>
+            <li><p>March 2022: I am honored to receive the RIKEN Ohbu award (research incentive award). </p></li>
+            <li><p>March 2022: I will give an invited talk at <a href="https://aaai.org/Conferences/AAAI-22/">AAAI22</a>' Workshop on <a href="https://advml-workshop.github.io/aaai2022/">Adversarial Machine Learning and Beyond</a>. </p></li>
+            <li><p>Feburary 2022: I am invited to serve as a reviewer for Transactions on Machine Learning Research (TMLR). </p></li>
+            <li><p>Feburary 2021: I will be serving as a reviewer for ACM SIGKDD 2022. </p></li>
+            <li><p>December 2021: I will be serving as a reviewer for ICML 2022. </p></li>
             <li><p>September 2021: I will be serving as a reviewer for CVPR 2022. </p></li>
-            <li>September 2021: My research proposal "discouraging adversarial attacks through improving the adversarial training" for the <a href="https://www.jst.go.jp/kisoken/boshuu/teian/en/top/gaiyo.html">Strategic Basic Research Programs ACT-X</a> is announced [<a href="https://www.jst.go.jp/kisoken/act-x/application/2021/210921/210921act-x.pdf" target="_blank">link</a>].  </p></li>
+            <li>September 2021: My research proposal accepted in the <a href="https://www.jst.go.jp/kisoken/boshuu/teian/en/top/gaiyo.html">Strategic Basic Research Programs ACT-X</a> is announced [<a href="https://www.jst.go.jp/kisoken/act-x/application/2021/210921/210921act-x.pdf" target="_blank">link</a>].  </p></li>
             <li><p>September 2021: I will be serving as a reviewer for AAAI 2022. </p></li>
             <li><p>June 2021: I am invited to give a talk at <a href="https://www.whu.edu.cn/" target="_blank">Wuhan University</a> [<a href="talks/slides/Public_talk_riken_adv_ML_(Wuhan).pdf">slides</a>] [<a href="http://cs.whu.edu.cn/news_show.aspx?id=1531">events</a>]. </p></li>
             <li><p>June 2021: I am at <a href="https://www.tsinghua.edu.cn/en/", target="_blank">Tsinghua University</a> as a visiting scholar. </p></li>
@@ -79,34 +85,74 @@
  </div>
 
 <div>
-        <h2><hr><a name="research"></a>Research</h2>
-<ul>
-Jingfeng's research interests lie in trustworthy machine learning, in which he specializes in adversarial robustness. <br/>
+        <h2 id='research'><hr><a name="research"></a>Research</h2>
+<ul> Jingfeng's long-term research interest is making artificial intelligence secure for human beings.<br>
+     Jingfeng's ongoing projects are as follows.</ul>
 
-His long-term research interest is making artificial intelligence secure for human beings.</ul>
+<ul>[Background] When we deploy models trained by standard training (ST), they work well on natural test data.
+    However, those models cannot handle adversarial test data (also known as adversarial examples) that are algorithmically generated by adversarial attacks. An adversarial attack is an algorithm which applies specially designed tiny perturbations on natural data to transform them into adversarial data, in order to mislead a trained model and let it give wrong predictions. Adversarial robustness is aimed at improving the robust accuracy of trained models against adversarial attacks. <br><br>
+    
+    What is adversarial training (AT)? Given the knowledge that the test data may be adversarial, AT carefully simulates some adversarial attacks during training. Thus, the model has already seen many adversarial training data in the past, and hopefully it can generalize to adversarial test data in the future. <br><br>
+    
+    AT has two purposes: (1) correctly classify the data (same as ST) and (2) make the decision boundary thick so that no data lie nearby the decision boundary.
+
+</ul>
+
+<ul><li>AT has <b>smoothing effect</b>: AT can natrually mitigate the side effects of imperfect training sets (such as noisy labels or backdoors).<br>
+    <a href="https://arxiv.org/abs/2102.03482"> Understanding the interaction of adversarial training with noisy labels</a> in 2021.<br>
+    <a her="https://arxiv.org/abs/2202.10627">On the effective adversarial training against backdoor attacks</a> in 2022. </li>
+</ul>
+<ul>
+    <li> The techniques of AT can <b>evaluate/enhance the reliabilities of some tools</b> (such as image denoiser and non-parametric two sample tests)<br>
+    <a href="https://arxiv.org/abs/2201.04397">Towards adversarially robust image denoising</a> in 2022.<br>
+    <a her="https://arxiv.org/abs/2202.03077">Adversarial attacks and defenses for non-parametric two sample tests</a> in 2022.
+    </li>
+</ul>
+
+
+<ul>
+    <li> AT can be further improved through leveraging <b>some tricks</b> (such as injecting noisy labels, employing collaborations) <br>
+    <a href="https://arxiv.org/abs/2105.14676">NoiLin: Improving adversarial training and correcting stereotype of noisy labels</a> in 2021.<br>
+    <a her="https://openreview.net/forum?id=4jUmjIoTz2">Collaborate to defend against adversarial attacks</a> in 2021.
+    </li>
+</ul>
+
+<ul><li>
+    I also get involved in the following several projects.<br>
+    Bound and method: sampling-based attack for cooperative multiagent reinforcement learning.<br>
+    Robust federated recommendation system.<br>
+    Improving adversarial robustness via misclassification aware data augmentation.<br>
+    WaveFuzz: A Clean-Label Poisoning Attack to Protect Your Voice.<br>
+    AdvDDoS: Zero-Query Universal Adversarial Attacks on Speech Recognition Systems.<br>
+</li></ul>
+
 </div>
 
+
+
+
 <div>
-        <h2><hr><a name="service"></a>Professional Service</h2>
+        <h2 id='service'><hr><a name="service"></a>Professional Service</h2>
         <ul>
-            <p> <span style="font-size: 100%"> <strong>Workshop organizer</strong> </p>
-            <p> ACML 2021 Workshop on  <a href="https://wsl-workshop.github.io/acml21.html" target="_blank"> Weakly Supervised Representation Learning </a> (with Feng Liu, Nan Lu, Lei Feng, Tongliang Liu, Bo Han, Gang Niu and Masashi Sugiyama)
+            <p> <span style="font-size: 100%"> <strong>Organizing workshops & seminars</strong> </p>
+            <p> TrustML Young Scientist Seminars (<a href="https://trustmlresearch.github.io" target="_blank">TrustML YSS</a>)  [<a href="https://www.youtube.com/channel/UCipPccqvcfychKNOaYUokyQ" target="_blank">Video series</a>] </p>
+            <p> ACML 2021 Workshop on <a href="https://wsl-workshop.github.io/acml21.html" target="_blank"> Weakly Supervised Representation Learning </a>
             </p>
         </ul>
         <ul>
-		   <p> <span style="font-size: 100%"> <strong>Conference reviewer</strong> </p>
-           <p> ICML'20, 21, NeurIPS'21, ICLR'21, 22, IJCAI'20, 21, ACM Multimedia'21, ACML'21 </p>
-        </ul>
-           
-        <ul>
-            <p> <span style="font-size: 100%"> <strong>Journal reviewer</strong> </p>
-           <p>TNNLS, Pattern Recognition, MACH</li>
+		   <p> <span style="font-size: 100%"> <strong>Reviewing papers for prestigious conferences</strong> </p>
+           <p> ICLR'21-22, ICML'20-22, NeurIPS'21-22, CVPR'22, IJCAI'20-22, AAAI'22, ACM Multimedia'21-22, ACM SIGKDD'22, etc.</p>
         </ul>
         <ul>
+        
+        <p> <span style="font-size: 100%"> <strong>Invited lecturer</strong> </p>
+           <p>2022 Spring Semester (S1 Term) @ <a href="https://www.i.u-tokyo.ac.jp/greeting_e.shtml" target="_blank">Graduate School of Information Science and Technology</a>, <a href="https://www.u-tokyo.ac.jp/en/index.html" target="_blank">The University of Tokyo</a>, <a href="https://www.i.u-tokyo.ac.jp/edu/proced/sche_sa_e.shtml" target="_blank">Special Topics in Mechano-Informatics II</a>---Trustworthy machine learning<br/>
+           </p>
+        
         <p> <span style="font-size: 100%"> <strong>Teaching assistant</strong> </p>
-           <p>2017/2018 Semeter 2, BT5152 @ School of Computing, NUS, Decision Making Technologies <br/>
-           2017/2018 Semeter 2, CS3243 @ School of Computing, NUS, Introduction to Artificial Intelligence<br/>
-           2016/2017 Semeter 2, CS3243 @ School of Computing, NUS, Introduction to Artificial Intelligence</p>
+           <p>2017/2018 Semester 2, BT5152 @ School of Computing, NUS, Decision Making Technologies <br/>
+           2017/2018 Semester 2, CS3243 @ School of Computing, NUS, Introduction to Artificial Intelligence<br/>
+           2016/2017 Semester 2, CS3243 @ School of Computing, NUS, Introduction to Artificial Intelligence</p>
         </ul>
 
            
@@ -114,8 +160,11 @@ His long-term research interest is making artificial intelligence secure for hum
 </div>
     
     <div>
-        <h2><hr><a name="publications"></a>Publications</h2> (* indicates equal contributions; # indicates corresponding author)
+        <h2 id='publications'><hr><a name="publications"></a>Publications</h2> (* indicates equal contributions; # indicates corresponding author)
         <ul>
+            <li><p>Reliable Adversarial Distillation with Unreliable Teachers.<br>
+            J. Zhu, J. Yao, B. Han, <b>J. Zhang</b>, T. Liu, G. Niu, J. Zhou, J. Xu, H. Yang.<br>
+            In Proceedings of <i>10th International Conference on Learning Representations (ICLR 2022)</i>, [<a href="https://openreview.net/forum?id=u6TRGdzhfip" target="_blank">PDF</a>] [<a href="#publications">Code</a>] [<a href="#publications", target="_blank">Poster</a>].</p></li>
 
            <li><p>CIFS: Improving Adversarial Robustness of CNNs via Channel-wise Importance-based Feature Selection.<br>
            H. Yan, <b>J. Zhang</b>#, G. Niu, J. Feng, V. Y. F. Tan, M. Sugiyama.<br>
@@ -145,6 +194,14 @@ His long-term research interest is making artificial intelligence secure for hum
         </ul>
     </div>
 	
+    <div>
+            <h2 id='funding'><hr><a name="funding"></a>Funding</h2>
+    <ul>
+        <a href="https://www.jst.go.jp/kisoken/boshuu/teian/en/top/gaiyo.html">JST ACT-X</a>, Grant Number JPMJAX21AF, Japan [<a href="https://www.jst.go.jp/kisoken/act-x/application/2021/210921/210921act-x.pdf" target="_blank">Annoucement</a>]
+    </ul>
+    </div>
+    
+    
 	<div>
         <h2><hr><a name="biography"></a>Brief Biography</h2>
         <ul>
