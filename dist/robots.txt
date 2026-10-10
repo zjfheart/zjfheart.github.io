@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zjfheart.github.io/sitemap.xml

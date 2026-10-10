@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7faff">
+  <meta name="description" content="$description">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="$page_title">
+  <meta property="og:description" content="$description">
+  <meta property="og:url" content="$site_url">
+  <meta property="og:site_name" content="$name">
+  <meta property="og:image" content="$portrait_absolute">
+  <meta property="og:image:alt" content="$portrait_alt">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="$page_title">
+  <meta name="twitter:description" content="$description">
+  <meta name="twitter:image" content="$portrait_absolute">
+  <link rel="canonical" href="$site_url">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script defer src="assets/app.js"></script>
+  <script type="application/ld+json">$structured_data</script>
+  <title>$page_title</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="shell nav-shell">
+      <a class="wordmark" href="#top" aria-label="$name home">
+        <span class="wordmark-mark" aria-hidden="true">JZ</span>
+        <span>$name</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        <span class="sr-only">Open navigation</span>
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="#projects">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#join">Join</a>
+        <a href="#people">People</a>
+        <a href="#talks">Talks</a>
+        <a href="#teaching">Teaching</a>
+        <a class="nav-cta" href="mailto:$email">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">$focus</p>
+          <h1 id="hero-title">$headline</h1>
+          <p class="hero-role"><strong>$name</strong> · $role<br>$institution</p>
+          <p class="hero-summary">$summary</p>
+          <p class="hero-evidence" aria-label="Selected research distinctions"><span>ICLR Oral</span><span>NeurIPS Spotlight</span><span>RIKEN Ohbu Award</span></p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#join">Apply to RISE-AI <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="#projects">Explore the research</a>
+          </div>
+          <div class="hero-links" aria-label="Academic profiles">
+            <a href="$scholar_url" target="_blank" rel="noreferrer">Google Scholar ↗</a>
+            <a href="$orcid_url" target="_blank" rel="noreferrer">ORCID ↗</a>
+            <a href="$github_url" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+          <p class="hero-affiliation">$affiliation</p>
+        </div>
+        <figure class="portrait-wrap reveal">
+          <div class="portrait-backdrop" aria-hidden="true"></div>
+          <img class="portrait" src="$portrait_url" alt="$portrait_alt" width="1024" height="1280" fetchpriority="high">
+          <figcaption><span class="status-dot" aria-hidden="true"></span>Based in Shanghai · working globally</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Selected evidence">
+      <div class="shell proof-grid">$proof_cards</div>
+    </section>
+
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="shell">
+        <div class="about-grid">
+          <div class="reveal">
+            <p class="eyebrow">$about_eyebrow</p>
+            <h2 id="about-title">$about_title</h2>
+          </div>
+          <div class="reveal">
+            <p class="section-lede">$about_body</p>
+            <p class="body-copy">$about_bio</p>
+          </div>
+        </div>
+        <div class="timeline-group reveal">
+          <p class="timeline-label" id="primary-experience-title">Formal appointments & education</p>
+          <div class="experience-list" aria-labelledby="primary-experience-title">$primary_items</div>
+        </div>
+        <div class="timeline-group reveal">
+          <p class="timeline-label" id="engagement-title">Exchange, visiting, internships & part-time roles</p>
+          <div class="experience-list experience-list-scroll" role="region" tabindex="0" aria-labelledby="engagement-title" aria-describedby="engagement-scroll-note" data-visible-items="5" data-vertical-scroll>$engagement_items</div>
+          <p class="scroll-note" id="engagement-scroll-note"><span>Showing $engagement_visible_count of $engagement_count entries · scroll within the list</span><span aria-hidden="true">↕</span></p>
+        </div>
+        <div class="credential-group reveal" id="service" data-carousel-group>
+          <div class="scroll-heading">
+            <div>
+              <p class="timeline-label" id="credentials-title">Awards, funding & academic leadership</p>
+              <p class="scroll-note" id="credentials-scroll-note">Showing $credential_visible_count of $credential_count cards · swipe, scroll, or use the arrows</p>
+            </div>
+            <div class="scroll-controls" aria-label="Recognition carousel controls">
+              <button type="button" aria-label="Show previous recognition" aria-controls="credential-strip" data-carousel-prev><span aria-hidden="true">←</span></button>
+              <button type="button" aria-label="Show next recognition" aria-controls="credential-strip" data-carousel-next><span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+          <div class="credential-strip" id="credential-strip" role="region" tabindex="0" aria-labelledby="credentials-title" aria-describedby="credentials-scroll-note" data-carousel>$credential_cards</div>
+        </div>
+        <div class="service-line reveal">
+          <p><strong>Editorial</strong> $service_editorial</p>
+          <p><strong>Conferences</strong> $service_conferences</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section section-dark" id="projects" aria-labelledby="projects-title">
+      <div class="shell">
+        <div class="section-heading section-heading-split reveal">
+          <div><p class="eyebrow eyebrow-light">Research agenda</p><h2 id="projects-title">Four routes to safer, more dependable intelligence.</h2></div>
+          <p>Each programme connects a hard scientific question to an observable failure mode—and to a path for intervention.</p>
+        </div>
+        <div class="project-grid">$project_cards</div>
+      </div>
+    </section>
+
+    <section class="recruitment section" id="join" aria-labelledby="join-title">
+      <div class="shell recruitment-shell">
+        <div class="join-intro reveal">
+          <p class="status-pill"><span aria-hidden="true"></span>$recruitment_status</p>
+          <p class="eyebrow">Prospective students & collaborators</p>
+          <h2 id="join-title">$recruitment_title</h2>
+          <p class="section-lede">$recruitment_intro</p>
+          <blockquote>“$recruitment_quote”<cite>— Jingfeng Zhang</cite></blockquote>
+        </div>
+        <div class="join-detail reveal">
+          <div class="track-grid">$recruitment_tracks</div>
+          <div class="join-columns">
+            <div><h3>Who thrives here</h3><ul class="check-list">$recruitment_fit</ul></div>
+            <div><h3>How to start</h3><ol class="number-list">$recruitment_apply</ol></div>
+          </div>
+          <div class="apply-card">
+            <div><span>Email subject</span><code>$recruitment_subject</code></div>
+            <a class="button button-primary" href="$application_mailto">Email your application</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="people section section-soft" id="people" aria-labelledby="people-title">
+      <div class="shell">
+        <div class="section-heading section-heading-split reveal">
+          <div><p class="eyebrow">RISE-AI Lab</p><h2 id="people-title">$people_title</h2></div>
+          <p>$people_intro</p>
+        </div>
+        <div class="people-grid reveal">$people_cards</div>
+      </div>
+    </section>
+
+    <section class="publications section" id="publications" aria-labelledby="publications-title">
+      <div class="shell publication-shell">
+        <div class="section-heading section-heading-split reveal">
+          <div><p class="eyebrow">Selected publications</p><h2 id="publications-title">Research, organised by year.</h2></div>
+          <p>This is a curated, identity-checked record. For the complete and most current list, visit <a href="$scholar_url" target="_blank" rel="noreferrer">Google Scholar ↗</a>.</p>
+        </div>
+        <div class="publication-browser reveal">
+          <div class="year-tabs" role="tablist" aria-label="Publication year" data-year-tabs>$publication_tabs</div>
+          <div class="publication-panels">$publication_panels</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="talks section section-dark" id="talks" aria-labelledby="talks-title">
+      <div class="shell">
+        <div class="section-heading section-heading-split reveal">
+          <div><p class="eyebrow eyebrow-light">Talks & lectures</p><h2 id="talks-title">Ideas shared across institutions and communities.</h2></div>
+          <p>Selected invited talks, lectures, and conference presentations on reliable and adversarial learning.</p>
+        </div>
+        <div class="talk-list reveal">$talk_cards</div>
+        <div class="section-action reveal"><a class="button button-on-dark" href="talks.html">View the complete 43-item archive <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+    <section class="teaching section" id="teaching" aria-labelledby="teaching-title">
+      <div class="shell">
+        <div class="section-heading section-heading-split reveal">
+          <div><p class="eyebrow">Teaching & mentoring</p><h2 id="teaching-title">Teaching that connects foundations to current systems.</h2></div>
+          <p>Machine learning, generative modelling, trustworthy AI, and research mentoring across institutions in China, Japan, and New Zealand.</p>
+        </div>
+        <div class="teaching-grid">$teaching_cards</div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-card reveal">
+        <div><p class="eyebrow eyebrow-light">Students · collaborators · partners</p><h2 id="contact-title">Let’s make intelligent systems worthy of trust.</h2></div>
+        <div class="contact-detail">
+          <a class="contact-email" href="mailto:$email">$email</a>
+          <p>$address</p>
+          <div class="contact-links">
+            <a href="$scholar_url" target="_blank" rel="noreferrer">Scholar ↗</a>
+            <a href="$orcid_url" target="_blank" rel="noreferrer">ORCID ↗</a>
+            <a href="$github_url" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>© $year $name · Built as a lightweight, accessible static site.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
