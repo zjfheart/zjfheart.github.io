@@ -13,7 +13,7 @@
     "affiliation": "College of Intelligent Robotics and Advanced Manufacturing · Institute of Trustworthy Embodied AI",
     "focus": "Trustworthy Machine Learning · Safe Embodied AI",
     "headline": "Building trustworthy AI for high-stakes decisions",
-    "summary": "I lead RISE-AI Lab at Fudan University, where we study robustness, safety, and dependable decision-making for machine learning and embodied intelligence.",
+    "summary": "I lead RISE-AI Lab at Fudan University, where we study Trustworthy Machine Learning & Safe Embodied Intelligence",
     "portrait": "assets/jingfeng-zhang.jpg",
     "portraitAlt": "Portrait of Jingfeng Zhang",
     "email": "zjf@fudan.edu.cn",
@@ -23,14 +23,14 @@
     "github": "https://github.com/zjfheart"
   },
   "proof": [
-    {"value": "30+", "label": "papers at leading AI venues", "detail": "Including ICML, NeurIPS, ICLR and IEEE TPAMI", "url": "https://wsl-workshop.github.io/"},
-    {"value": "Oral · Spotlight", "label": "selective paper distinctions", "detail": "ICLR Oral and NeurIPS Spotlight", "url": "https://wsl-workshop.github.io/"},
-    {"value": "Ohbu Award", "label": "RIKEN research recognition", "detail": "RIKEN AIP, FY2021", "url": "https://aip.riken.jp/news/fy2021_riken_ohbu_award/?lang=en"},
-    {"value": "8 countries", "label": "international academic experience", "detail": "China · Singapore · Japan · New Zealand · UAE · Saudi Arabia · UK · USA", "url": "#about"}
+    {"value": "30+ Papers", "label": "at leading AI venues", "detail": "ICML, NeurIPS, ICLR and IEEE TPAMI", "url": "https://scholar.google.com/citations?user=NS0P1FkAAAAJ&hl=en"},
+    {"value": "Research Distinctions", "label": "Oral · Spotlight · Best", "detail": "ICLR 2021 · NeurIPS 2023 · AAAI 2025", "url": "https://scholar.google.com/citations?user=NS0P1FkAAAAJ&hl=en"},
+    {"value": "RIKEN Ohbu Award", "label": "Research recognition", "detail": "RIKEN AIP, FY2021", "url": "https://aip.riken.jp/news/fy2021_riken_ohbu_award/?lang=en"},
+    {"value": "8 countries", "label": "Global experiences", "detail": "China · U.K. · U.S.A. · Singapore · Japan · New Zealand · Saudi Arabia · U.A.E.", "url": "#about"}
   ],
   "about": {
-    "eyebrow": "Research with a reliability mandate",
-    "title": "Trustworthy intelligence, from learning algorithms to embodied agents.",
+    "eyebrow": "Research with the trustAI mandate",
+    "title": "Trustworthy AI, from learning theories to embodied intelligence.",
     "body": "My research asks a practical question: how can an intelligent system stay dependable when its data are imperfect, its environment shifts, or an adversary actively tries to break it? I develop learning principles, evaluations, and defenses that make failure visible—and safety actionable.",
     "bio": "I am an Associate Professor and PhD Supervisor at Fudan University. My primary career path includes a permanent lectureship at the University of Auckland and research appointments at RIKEN AIP, following a bachelor's degree from Shandong University and a PhD from the National University of Singapore. Complementary international experience includes research roles with NYU Abu Dhabi and KAUST, internships at IBM Research, Singapore and RIKEN AIP, part-time teaching at the University of Tokyo and Ochanomizu University, and undergraduate study at UCLA and the University of Cambridge."
   },
