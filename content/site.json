@@ -35,8 +35,8 @@
     "bio": "I am an Associate Professor and PhD Supervisor at Fudan University. My primary career path includes a permanent lectureship at the University of Auckland and research appointments at RIKEN AIP, following a bachelor's degree from Shandong University and a PhD from the National University of Singapore. Complementary international experience includes research roles with NYU Abu Dhabi and KAUST, internships at IBM Research, Singapore and RIKEN AIP, part-time teaching at the University of Tokyo and Ochanomizu University, and undergraduate study at UCLA and the University of Cambridge."
   },
   "experience": [
-    {"years": "Current", "role": "Associate Professor & PhD Supervisor", "place": "Fudan University", "url": "https://www.fudan.edu.cn/en/"},
-    {"years": "2023—2026", "role": "Lecturer (permanent)", "place": "University of Auckland", "url": "https://www.auckland.ac.nz/en/science/about-the-faculty/school-of-computer-science.html"},
+    {"years": "2026-Current", "role": "Associate Professor & PhD Supervisor", "place": "Fudan University", "url": "https://www.fudan.edu.cn/en/"},
+    {"years": "2023—2026", "role": "Lecturer (permanent) & PhD Supervisor", "place": "University of Auckland", "url": "https://www.youtube.com/watch?v=hqIfZphwhjQ"},
     {"years": "2021—2023", "role": "Postdoctoral Researcher → Research Scientist", "place": "RIKEN AIP", "url": "https://aip.riken.jp/"}
   ],
   "education": [
@@ -44,13 +44,14 @@
     {"years": "2012—2016", "role": "BSc in Computer Science & Technology", "place": "Taishan College, Shandong University", "url": "https://www.tsxt.sdu.edu.cn/"}
   ],
   "engagements": [
-    {"years": "2026", "role": "Guest Lecturer (part-time)", "place": "Ochanomizu University", "url": "https://tw.ao.ocha.ac.jp/Syllabus/index_search.cfm?jugyo=26C5083"},
+    {"years": "2023-Current", "role": "Visiting Scientist", "place": "RIKEN AIP", "url": "https://aip.riken.jp/"}
     {"years": "2022—2026", "role": "Guest Lecturer (part-time)", "place": "The University of Tokyo", "url": "https://catalog.he.u-tokyo.ac.jp/detail?code=4850-1022&year=2026"},
-    {"years": "Previous", "role": "Research Associate", "place": "Center for Artificial Intelligence and Robotics (CAIR), New York University Abu Dhabi", "url": "https://nyuad.nyu.edu/en/research/faculty-labs-and-projects/center-for-artificial-intelligence-and-robotics/researchers/jingfeng-zhang.html"},
-    {"years": "Visiting", "role": "Visiting Professor", "place": "PRADA Lab, King Abdullah University of Science and Technology (KAUST)", "url": "https://pradalab1.github.io/people.html"},
+    {"years": "2026", "role": "Guest Lecturer (part-time)", "place": "Ochanomizu University", "url": "https://tw.ao.ocha.ac.jp/Syllabus/index_search.cfm?jugyo=26C5083"},
+    {"years": "2024-2026", "role": "Research Associate", "place": "Center for Artificial Intelligence and Robotics (CAIR), New York University Abu Dhabi", "url": "https://nyuad.nyu.edu/en/research/faculty-labs-and-projects/center-for-artificial-intelligence-and-robotics/researchers/jingfeng-zhang.html"},
+    {"years": "2024-2026", "role": "Visiting Professor", "place": "PRADA Lab, King Abdullah University of Science and Technology (KAUST)", "url": "https://pradalab1.github.io/people.html"},
     {"years": "2019", "role": "Research Intern", "place": "RIKEN Center for Advanced Intelligence Project (RIKEN AIP), Tokyo, Japan", "url": "https://aip.riken.jp/"},
     {"years": "2018", "role": "Research Intern", "place": "IBM Research, Singapore", "url": "https://research.ibm.com/"},
-    {"years": "2015", "role": "Exchange Study", "place": "University of California, Los Angeles (UCLA)", "url": "https://www.ucla.edu/"},
+    {"years": "2015", "role": "Undergraduate Exchange", "place": "University of California, Los Angeles (UCLA)", "url": "https://www.ucla.edu/"},
     {"years": "2015", "role": "Summer School", "place": "University of Cambridge", "url": "https://www.cam.ac.uk/"}
   ],
   "credentials": [
@@ -104,7 +105,7 @@
   },
   "publicationYears": ["2026", "2025", "2024", "2023", "2022", "2021", "2020-earlier"],
   "publications": [
-    {"year": "2026", "title": "Benign Overfitting in Adversarial Training for Vision Transformers", "authors": ["Jiaming Zhang", "Meng Ding", "Shaopeng Fu", "Jingfeng Zhang", "Di Wang"], "venue": "ICML 2026", "url": "https://arxiv.org/abs/2604.19724", "links": [{"label": "arXiv", "url": "https://arxiv.org/abs/2604.19724"}]},
+    {"year": "2026", "title": "Benign Overfitting in Adversarial Training for Vision Transformers", "authors": ["Jiaming Zhang", "Meng Ding", "Shaopeng Fu", "Jingfeng Zhang", "Di Wang"], "venue": "ICML 2026", "url": "https://openreview.net/forum?id=grSvnNlEUU", "links": [{"label": "arXiv", "url": "https://arxiv.org/abs/2604.19724"}]},
     {"year": "2026", "title": "AutoRAS: Learning Robust Agentic Systems with Primitive Representations", "authors": ["Yang Yue", "Xuancheng Zhu", "Yuyang Ma", "Guoshun Nan", "Zihan Dou", "Jingru Shan", "Congyu Guo", "Ji Zhang", "Hua Wang", "Jingfeng Zhang"], "venue": "ICML 2026", "url": "https://arxiv.org/abs/2606.21445", "links": [{"label": "arXiv", "url": "https://arxiv.org/abs/2606.21445"}, {"label": "Code", "url": "https://github.com/guohezuy/AutoRAS"}]},
     {"year": "2026", "title": "Dissecting Representation Misalignment in Contrastive Learning via Influence Function", "authors": ["Huanyi Xie", "Chenyang Ren", "Khouloud Saadi", "Shu Yang", "Zhen Tan", "Jingfeng Zhang", "Lijie Hu", "Di Wang"], "venue": "ICLR 2026", "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/65848e674f556cee56492c0b502eced8-Abstract-Conference.html", "links": [{"label": "Paper", "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/65848e674f556cee56492c0b502eced8-Abstract-Conference.html"}]},
     {"year": "2026", "title": "Unlearning during Training: Domain-Specific Gradient Ascent for Domain Generalization", "authors": ["Di Zhao", "Jingfeng Zhang", "Hongsheng Hu", "Philippe Fournier-Viger", "Gillian Dobbie", "Yun Sing Koh"], "venue": "ICLR 2026", "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/9ebba082fde4e563149d38a847886040-Abstract-Conference.html", "links": [{"label": "Paper", "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/9ebba082fde4e563149d38a847886040-Abstract-Conference.html"}]},
