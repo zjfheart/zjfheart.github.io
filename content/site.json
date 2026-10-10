@@ -29,7 +29,7 @@
     {"value": "8 countries", "label": "Global experiences", "detail": "China · U.K. · U.S.A. · Singapore · Japan · New Zealand · Saudi Arabia · U.A.E.", "url": "#about"}
   ],
   "about": {
-    "eyebrow": "Research with the trustAI mandate",
+    "eyebrow": "Research with the TrustAI mandate",
     "title": "Trustworthy AI, from learning theories to embodied intelligence.",
     "body": "My research asks a practical question: how can an intelligent system stay dependable when its data are imperfect, its environment shifts, or an adversary actively tries to break it? I develop learning principles, evaluations, and defenses that make failure visible—and safety actionable.",
     "bio": "I am an Associate Professor and PhD Supervisor at Fudan University. My primary career path includes a permanent lectureship at the University of Auckland and research appointments at RIKEN AIP, following a bachelor's degree from Shandong University and a PhD from the National University of Singapore. Complementary international experience includes research roles with NYU Abu Dhabi and KAUST, internships at IBM Research, Singapore and RIKEN AIP, part-time teaching at the University of Tokyo and Ochanomizu University, and undergraduate study at UCLA and the University of Cambridge."
