@@ -11,7 +11,7 @@ A fast, mobile-first, English academic homepage for Jingfeng Zhang and RISE-AI L
 - Detailed recruitment section and lab culture
 - Extensible people directory
 - Accessible, URL-aware publication filters by year
-- Selected talks plus a 43-item legacy-compatible `/talks.html` archive
+- Selected talks plus an automatically counted, legacy-compatible `/talks.html` archive
 - Teaching and mentoring at Fudan, the University of Auckland, the University of Tokyo, and Ochanomizu University
 - Search-engine metadata, sitemap, robots file, favicon, and custom 404 page
 - GitHub Pages deployment workflow

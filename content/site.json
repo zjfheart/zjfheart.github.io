@@ -164,6 +164,7 @@
   ],
   "talks": [
     {"date": "2026-08-29", "event": "International Workshop on Weakly Supervised Learning 2026", "location": "Seoul, South Korea", "title": "Privacy-Preserving Adaptation against Membership Inference Attacks for Latent Diffusion Models", "url": "https://wsl-workshop.github.io/wsl26.html"},
+    {"date": "2026-06-13", "event": "Research Awakening · AI Frontier Lecture — PaperWeekly × STARC", "location": "Online (China)", "title": "Attack and Defense Mechanisms in Trustworthy Machine Learning: Challenges and Future Directions", "url": "https://mp.weixin.qq.com/s/EJhEGiiQvYbeyMyaBzGD0Q"},
     {"date": "2023-11-24", "event": "International Workshop on Weakly Supervised Learning 2023", "location": "Tokyo, Japan", "title": "Towards Robust Foundation Models: Adversarial Contrastive Learning", "url": "https://wsl-workshop.github.io/wsl23.html"},
     {"date": "2023-03-30", "event": "Vector Institute & RIKEN AIP Joint Symposium", "location": "Online", "title": "Application of Adversarial Robustness", "url": "https://aip.riken.jp/events/event_152462/"},
     {"date": "2023-03-10", "event": "EPFL-CIS & RIKEN-AIP Joint Workshop", "location": "Lausanne, Switzerland", "title": "Applications of Adversarial Robustness", "url": "https://www.epfl.ch/research/domains/cis/epfl-cis-riken-aip-joint-workshop-2023/", "video": "https://www.youtube.com/watch?v=lpVVMLuUg7E"},

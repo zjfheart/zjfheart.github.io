@@ -326,6 +326,7 @@ def main() -> None:
         "publication_tabs": publication_tabs,
         "publication_panels": publication_panels,
         "talk_cards": render_talks(data["talks"]),
+        "talk_archive_count": str(len(talk_archive_data)),
         "teaching_cards": render_teaching(data["teaching"]),
         "structured_data": structured_data,
         "year": str(dt.date.today().year),
@@ -338,6 +339,8 @@ def main() -> None:
         "site_url": esc(site["url"].rstrip("/")),
         "name": esc(profile["name"]),
         "talk_count": str(len(talk_archive_data)),
+        "talk_year_start": min(item["date"][:4] for item in talk_archive_data),
+        "talk_year_end": max(item["date"][:4] for item in talk_archive_data),
         "talk_archive": render_talk_archive(talk_archive_data),
         "year": str(dt.date.today().year),
     }
