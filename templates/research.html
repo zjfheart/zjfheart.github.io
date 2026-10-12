@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#082e73">
+  <meta name="description" content="$description">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="$page_title">
+  <meta property="og:description" content="$description">
+  <meta property="og:url" content="$canonical">
+  <meta property="og:site_name" content="$name">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="$canonical">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script defer src="../assets/app.js"></script>
+  <script type="application/ld+json">$structured_data</script>
+  <title>$page_title</title>
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header research-header" data-header>
+    <div class="shell nav-shell">
+      <a class="wordmark" href="../index.html" aria-label="$name home"><span class="wordmark-mark" aria-hidden="true">JZ</span><span>$name</span></a>
+      <nav class="research-header-actions" aria-label="Page navigation">
+        <a href="../index.html#projects">← All research</a>
+        <a class="nav-cta" href="../index.html#join">Work with us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="research-hero" aria-labelledby="research-title">
+      <div class="shell research-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#projects">Research</a><span aria-hidden="true">/</span><span>$short_title</span></nav>
+        <div class="research-hero-grid">
+          <div class="research-hero-copy">
+            <p class="eyebrow eyebrow-light">Research programme · $number</p>
+            <h1 id="research-title">$title</h1>
+            <p class="research-question">$question</p>
+            <p class="research-overview">$overview</p>
+            <div class="tag-list research-tags" aria-label="Research topics">$topics</div>
+            <p class="research-count"><strong>$paper_count</strong> selected research outputs$talk_count_item</p>
+          </div>
+          <aside class="research-axis-wrap" aria-label="Four-layer research agenda">
+            <p>From foundations to action</p>
+            <ol class="research-axis">$research_axis</ol>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-focus section" aria-labelledby="focus-title">
+      <div class="shell research-inner">
+        <div class="research-section-heading">
+          <div><p class="eyebrow">Research focus</p><h2 id="focus-title">Three questions shape this programme.</h2></div>
+          <p>This is the working agenda: a precise statement of the problems the lab is building toward, not a claim that every component is already solved.</p>
+        </div>
+        <div class="research-focus-grid">$focus_cards</div>
+      </div>
+    </section>
+
+    <section class="research-evidence section" aria-labelledby="outputs-title">
+      <div class="shell research-inner">
+        <div class="research-section-heading">
+          <div><p class="eyebrow">Selected publications & outcomes</p><h2 id="outputs-title">Evidence behind the direction.</h2></div>
+          <p>Peer-reviewed papers and clearly labelled arXiv preprints are shown with their source records. See the <a href="$scholar_url" target="_blank" rel="noreferrer">complete Google Scholar profile ↗</a> for the full publication history.</p>
+        </div>
+        <div class="research-paper-list">$paper_cards</div>
+      </div>
+    </section>
+
+    $talks_section
+
+    <section class="research-programmes section" aria-labelledby="programmes-title">
+      <div class="shell research-inner">
+        <div class="research-section-heading compact-heading"><div><p class="eyebrow">The full agenda</p><h2 id="programmes-title">Explore all four research layers.</h2></div></div>
+        <nav class="research-nav-grid" aria-label="Research programmes">$research_navigation</nav>
+      </div>
+    </section>
+
+    <section class="research-cta section" aria-labelledby="research-cta-title">
+      <div class="shell research-cta-card">
+        <div><p class="eyebrow eyebrow-light">Students · collaborators · partners</p><h2 id="research-cta-title">Help move this programme from a hard question to reliable practice.</h2></div>
+        <div><p>RISE-AI welcomes people who value rigorous foundations, reproducible systems, and generous teamwork.</p><a class="button button-on-dark" href="../index.html#join">See openings and how to apply →</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner"><p>© $year $name</p><a href="../index.html#projects">Research agenda ↑</a></div>
+  </footer>
+</body>
+</html>

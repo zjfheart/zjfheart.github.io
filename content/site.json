@@ -68,12 +68,6 @@
     "editorial": "Associate Editor, IEEE Transactions on Artificial Intelligence and Neural Networks",
     "conferences": "Area Chair, ICML, NeurIPS and ICLR · Senior Program Committee, AAAI"
   },
-  "projects": [
-    {"number": "01", "title": "Foundation Model & Embodied AI Safety", "question": "How do we expose and control failure before intelligent agents reach the real world?", "description": "Safety evaluation and intervention for foundation models, multimodal systems, vision-language-action models, and agents with persistent memory.", "topics": ["Agent safety", "VLA models", "Red teaming", "Evaluation"]},
-    {"number": "02", "title": "Adversarial Attacks, Data Poisoning & Robustness", "question": "What does reliable learning require when data or supervision can be actively corrupted?", "description": "Attacks, defenses, robust representation learning, and reliable training under adversarial examples, poisoned data, and noisy labels.", "topics": ["Adversarial learning", "Data poisoning", "Robust training", "Imperfect data"]},
-    {"number": "03", "title": "Reliable Robot Decision-Making & Risk Control", "question": "How should an embodied system act when its perception or environment is uncertain?", "description": "Uncertainty-aware perception, risk-sensitive policies, and fail-safe decision mechanisms for robots operating under distribution shift.", "topics": ["Robot learning", "Uncertainty", "OOD detection", "Risk control"]},
-    {"number": "04", "title": "Trustworthy AI Benchmarks & Industry Solutions", "question": "How can scientific reliability become a repeatable engineering practice?", "description": "Reproducible benchmarks, stress tests, and deployment protocols that translate trustworthy-AI research into measurable system assurance.", "topics": ["Benchmarks", "Assurance", "Reproducibility", "Technology transfer"]}
-  ],
   "recruitment": {
     "status": "Open to strong prospective students",
     "title": "Join RISE-AI and work on problems where reliability truly matters.",

@@ -1,0 +1,266 @@
+{
+  "eyebrow": "Research agenda",
+  "title": "Four layers of trustworthy intelligence.",
+  "intro": "The programme moves from learning theory to data governance, model and agent security, and finally trustworthy behaviour in the physical world.",
+  "directions": [
+    {
+      "number": "01",
+      "slug": "learning-theory",
+      "shortTitle": "Learning Theory",
+      "title": "Learning Theory: Trustworthy AI Foundations",
+      "question": "What makes learning reliable under adversarial data, supervision, and evaluation?",
+      "description": "Core algorithms and theory for trustworthy machine learning, from adversarial training and robust generalisation to representation alignment.",
+      "topics": [
+        "Adversarial learning",
+        "Robust generalisation",
+        "Representation theory",
+        "Learning dynamics"
+      ],
+      "focus": [
+        {
+          "title": "Robust generalisation",
+          "detail": "Understand when robustness transfers beyond the training sample—and why accuracy and robustness sometimes compete."
+        },
+        {
+          "title": "Reliable representations",
+          "detail": "Study how contrastive and foundation-model representations become aligned, stable, and diagnostically useful."
+        },
+        {
+          "title": "Principled intervention",
+          "detail": "Turn theoretical failure analysis into training objectives, sample-selection rules, and measurable guarantees."
+        }
+      ],
+      "papers": [
+        {
+          "title": "Benign Overfitting in Adversarial Training for Vision Transformers",
+          "label": "Robust generalisation",
+          "summary": "Studies benign overfitting and generalisation in adversarially trained vision transformers."
+        },
+        {
+          "title": "Dissecting Representation Misalignment in Contrastive Learning via Influence Function",
+          "label": "Representation analysis",
+          "summary": "Uses influence-function analysis to examine representation misalignment in contrastive learning."
+        },
+        {
+          "title": "One Stone, Two Birds: Enhancing Adversarial Defense Through the Lens of Distributional Discrepancy",
+          "label": "Distributional robustness",
+          "summary": "Approaches adversarial defence through the distributional discrepancy between clean and adversarial data."
+        },
+        {
+          "title": "Improving Accuracy-Robustness Trade-off via Pixel Reweighted Adversarial Training",
+          "label": "Adversarial training",
+          "summary": "Studies the accuracy–robustness trade-off through pixel-reweighted adversarial training."
+        },
+        {
+          "title": "Efficient Adversarial Contrastive Learning via Robustness-Aware Coreset Selection",
+          "label": "Efficient robust learning",
+          "summary": "Makes adversarial contrastive learning more efficient with robustness-aware coreset selection."
+        },
+        {
+          "title": "Geometry-aware Instance-reweighted Adversarial Training",
+          "label": "Geometric learning theory",
+          "summary": "Uses instance geometry to reweight adversarial training; selected for an ICLR Oral."
+        }
+      ],
+      "talks": [
+        {
+          "date": "2026-06-13",
+          "title": "Attack and Defense Mechanisms in Trustworthy Machine Learning: Challenges and Future Directions"
+        },
+        {
+          "date": "2024-03-22",
+          "title": "Robust Machine Learning in Adversarial Environments"
+        },
+        {
+          "date": "2023-04-25",
+          "title": "Adversarial Learning: Foundations and Applications"
+        },
+        {
+          "date": "2022-09-07",
+          "title": "Adversarial Robustness: From Basic Science to Applications"
+        },
+        {
+          "date": "2021-05",
+          "title": "Geometry-aware Instance-reweighted Adversarial Training"
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "slug": "data-safety-governance",
+      "shortTitle": "AI Governance",
+      "title": "AI Governance: Data Safety & Content Integrity",
+      "question": "How do we keep data-driven systems reliable when data can be poisoned, biased, noisy, or private?",
+      "description": "Security and governance at the data layer: poisoning and backdoors, algorithmic bias, privacy leakage, and defensible data use.",
+      "topics": [
+        "Data poisoning",
+        "Algorithmic fairness",
+        "Privacy protection",
+        "Data governance"
+      ],
+      "focus": [
+        {
+          "title": "Poisoning & backdoors",
+          "detail": "Reveal how manipulated samples, labels, and physical triggers can redirect learning or downstream behaviour."
+        },
+        {
+          "title": "Bias & fair generation",
+          "detail": "Measure and mitigate systematic disparities in generative and predictive systems."
+        },
+        {
+          "title": "Privacy-preserving adaptation",
+          "detail": "Reduce information leakage while retaining the practical value of fine-tuning and collaborative learning."
+        }
+      ],
+      "papers": [
+        {
+          "title": "MP-Nav: Enhancing Data Poisoning Attacks against Multimodal Learning",
+          "label": "Multimodal poisoning",
+          "summary": "Investigates data-poisoning attacks against multimodal learning systems."
+        },
+        {
+          "title": "Fair Text-to-Image Diffusion via Fair Mapping",
+          "label": "Algorithmic fairness",
+          "summary": "Introduces fair mapping as a route to more equitable text-to-image diffusion."
+        },
+        {
+          "title": "Privacy-Preserving Low-Rank Adaptation Against Membership Inference Attacks for Latent Diffusion Models",
+          "label": "Privacy protection",
+          "summary": "Protects low-rank adaptation of latent diffusion models against membership-inference attacks."
+        },
+        {
+          "title": "Learning a Robust Foundation Model Against Clean-Label Data Poisoning Attacks at Downstream Tasks",
+          "label": "Clean-label poisoning",
+          "summary": "Studies foundation-model robustness to clean-label poisoning in downstream tasks."
+        },
+        {
+          "title": "Privacy-Preserving Heterogeneous Federated Learning",
+          "label": "Federated privacy",
+          "summary": "Addresses privacy in heterogeneous federated learning."
+        },
+        {
+          "title": "Bilateral Dependency Optimization: Defending Against Model-Inversion Attacks",
+          "label": "Model inversion",
+          "summary": "Defends against model-inversion attacks through bilateral dependency optimisation."
+        }
+      ],
+      "talks": [
+        {
+          "date": "2026-08-29",
+          "title": "Privacy-Preserving Adaptation against Membership Inference Attacks for Latent Diffusion Models"
+        },
+        {
+          "date": "2022-11-04",
+          "title": "Evaluating and Enhancing the Reliability of Semi-Supervised Learning"
+        }
+      ]
+    },
+    {
+      "number": "03",
+      "slug": "model-agent-security",
+      "shortTitle": "Model Security",
+      "title": "Model Security: Local LLMs & Trustworthy Agents",
+      "question": "How can locally deployed models and agents be evaluated, aligned, and controlled before they act?",
+      "description": "Safety for LLMs and agentic systems, spanning local and private deployment, jailbreak robustness, alignment, and repeatable evaluation harnesses.",
+      "topics": [
+        "Local deployment",
+        "LLM alignment",
+        "Agent safety",
+        "Evaluation harnesses"
+      ],
+      "focus": [
+        {
+          "title": "Local & private deployment",
+          "detail": "Design model adaptation and operating patterns that keep sensitive workloads closer to their owners."
+        },
+        {
+          "title": "Robust alignment",
+          "detail": "Stress-test preferences, prompts, and safety policies under adversarial or noisy feedback."
+        },
+        {
+          "title": "Agent evaluation harnesses",
+          "detail": "Build repeatable tests around tools, memory, plans, and failure recovery before agentic systems are deployed."
+        }
+      ],
+      "papers": [
+        {
+          "title": "AutoRAS: Learning Robust Agentic Systems with Primitive Representations",
+          "label": "Robust agents",
+          "summary": "Develops robust agentic systems around primitive representations."
+        },
+        {
+          "title": "Safety at Scale: A Comprehensive Survey of Large Model and Agent Safety",
+          "label": "Safety landscape",
+          "summary": "Organises the threat models, methods, and open questions across large-model and agent safety."
+        },
+        {
+          "title": "Short-length Adversarial Training Helps LLMs Defend Long-length Jailbreak Attacks: Theoretical and Empirical Evidence",
+          "label": "Jailbreak robustness",
+          "summary": "Provides theoretical and empirical evidence on adversarial training for long-length jailbreak defence."
+        },
+        {
+          "title": "Adversarial Preference Learning for Robust LLM Alignment",
+          "label": "Robust alignment",
+          "summary": "Uses adversarial preference learning to strengthen LLM alignment."
+        },
+        {
+          "title": "An LLM Can Fool Itself: A Prompt-Based Adversarial Attack",
+          "label": "Prompt attacks",
+          "summary": "Demonstrates a prompt-based adversarial attack in which an LLM can be induced to fool itself."
+        },
+        {
+          "title": "Perplexity-aware Correction for Robust Alignment with Noisy Preferences",
+          "label": "Preference reliability",
+          "summary": "Uses perplexity-aware correction to improve alignment when preference data are noisy."
+        }
+      ],
+      "talks": []
+    },
+    {
+      "number": "04",
+      "slug": "embodied-intelligence",
+      "shortTitle": "Embodied Intelligence",
+      "title": "Embodied Intelligence: Trustworthy Multimodal Robotics",
+      "question": "How can intelligent agents remain safe when perception becomes physical action?",
+      "description": "Trust mechanisms for vision-language-action models and embodied agents, including inference-time safeguards, adversarial testing, and physical-world backdoors.",
+      "topics": [
+        "Embodied AI",
+        "VLA safety",
+        "Physical backdoors",
+        "Inference-time control"
+      ],
+      "focus": [
+        {
+          "title": "Inference-time safeguards",
+          "detail": "Detect and regulate unsafe concepts while an embodied policy is deciding what action to take."
+        },
+        {
+          "title": "Adversarial VLA evaluation",
+          "detail": "Expose model-agnostic failure modes across vision, language, and action interfaces."
+        },
+        {
+          "title": "Physical-world threat models",
+          "detail": "Study how ordinary-looking objects and environmental cues can trigger goal-directed unsafe behaviour."
+        }
+      ],
+      "papers": [
+        {
+          "title": "Concept-Based Dictionary Learning for Inference-Time Safety in Vision Language Action Models",
+          "label": "Inference-time VLA safety",
+          "summary": "Uses concept-based dictionary learning to support inference-time safety in vision-language-action models."
+        },
+        {
+          "title": "Model-agnostic Adversarial Attack and Defense for Vision-Language-Action Models",
+          "label": "VLA attack & defence",
+          "summary": "Studies model-agnostic adversarial attacks and defences for vision-language-action systems."
+        },
+        {
+          "title": "Goal-oriented Backdoor Attack against Vision-Language-Action Models via Physical Objects",
+          "label": "Physical backdoors",
+          "summary": "Examines goal-oriented backdoor attacks on vision-language-action models through physical objects."
+        }
+      ],
+      "talks": []
+    }
+  ]
+}

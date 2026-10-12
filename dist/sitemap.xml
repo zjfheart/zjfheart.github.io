@@ -2,4 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://zjfheart.github.io/</loc></url>
   <url><loc>https://zjfheart.github.io/talks.html</loc></url>
+  <url><loc>https://zjfheart.github.io/research/learning-theory.html</loc></url>
+  <url><loc>https://zjfheart.github.io/research/data-safety-governance.html</loc></url>
+  <url><loc>https://zjfheart.github.io/research/model-agent-security.html</loc></url>
+  <url><loc>https://zjfheart.github.io/research/embodied-intelligence.html</loc></url>
 </urlset>

@@ -34,14 +34,15 @@ def read_document(path: Path) -> Document:
 
 
 def main() -> None:
-    pages = sorted(DIST.glob("*.html"))
+    pages = sorted(DIST.rglob("*.html"))
     if not pages:
         raise SystemExit("No generated HTML files found. Run scripts/build.py first.")
 
-    parsed = {page.name: read_document(page) for page in pages}
+    parsed = {page.relative_to(DIST).as_posix(): read_document(page) for page in pages}
     errors: list[str] = []
 
     for page, document in parsed.items():
+        page_path = DIST / page
         duplicates = sorted({item for item in document.ids if document.ids.count(item) > 1})
         if duplicates:
             errors.append(f"{page}: duplicate ids: {', '.join(duplicates)}")
@@ -54,7 +55,7 @@ def main() -> None:
 
             target_page = page
             if parts.path:
-                local_target = (DIST / parts.path.lstrip("/")).resolve()
+                local_target = ((DIST if parts.path.startswith("/") else page_path.parent) / parts.path.lstrip("/")).resolve()
                 try:
                     local_target.relative_to(DIST.resolve())
                 except ValueError:
@@ -64,7 +65,7 @@ def main() -> None:
                     errors.append(f"{page}: missing local target: {reference}")
                     continue
                 if local_target.suffix == ".html":
-                    target_page = local_target.name
+                    target_page = local_target.relative_to(DIST).as_posix()
 
             if parts.fragment:
                 target_document = parsed.get(target_page)

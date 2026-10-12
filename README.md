@@ -7,7 +7,7 @@ A fast, mobile-first, English academic homepage for Jingfeng Zhang and RISE-AI L
 - Responsive top navigation with no fixed sidebar
 - Evidence-led hero and verified recognition links
 - Five-row vertical experience window and touch-friendly horizontal recognition carousel
-- Four research programmes
+- Four linked research programmes, each with an independent evidence-led detail page
 - Detailed recruitment section and lab culture
 - Extensible people directory
 - Accessible, URL-aware publication filters by year
@@ -21,13 +21,15 @@ A fast, mobile-first, English academic homepage for Jingfeng Zhang and RISE-AI L
 ```text
 .
 ├── content/
-│   ├── site.json          # Profile, research, recruitment, people, papers, teaching
+│   ├── site.json          # Profile, recruitment, people, publications, and teaching
+│   ├── research.json      # Four directions, focus areas, and selected output references
 │   └── talks.json         # Complete talks archive
 ├── assets/
 │   ├── favicon.svg
 │   └── jingfeng-zhang.jpg
 ├── templates/
 │   ├── index.html
+│   ├── research.html      # Shared template for all four research pages
 │   └── talks.html
 ├── src/
 │   ├── styles.css
@@ -46,7 +48,6 @@ Most updates require editing only [`content/site.json`](content/site.json):
 - `experience` and `education`: primary appointments and degrees
 - `engagements`: exchanges, visits, internships, and part-time roles
 - `proof` and `credentials`: evidence shown near the top of the page
-- `projects`: the four research programmes
 - `recruitment`: open-call copy, lab fit, and application steps
 - `people.pi` and `people.members`: lab directory
 - `publications`: selected publication records
@@ -54,6 +55,22 @@ Most updates require editing only [`content/site.json`](content/site.json):
 - `teaching`: teaching and mentoring cards
 
 The build highlights the exact author name `Jingfeng Zhang` in every publication. Use the configured year keys, including `2020-earlier`, when adding papers.
+
+The four research directions live in [`content/research.json`](content/research.json). Each direction defines its title, URL slug, research question, focus areas, and an ordered list of publication and talk references. The build resolves those references against the single publication list in `site.json` and the single archive in `talks.json`, so paper metadata is never copied into four separate places.
+
+### Edit a research direction
+
+Update the direction object in `content/research.json`. To feature an existing paper, add its exact title plus a short, plain-language research summary:
+
+```json
+{
+  "title": "Exact title already stored in site.json",
+  "label": "Short theme label",
+  "summary": "One concise sentence describing why the work belongs in this direction."
+}
+```
+
+To feature a talk, reference the exact `date` and `title` already stored in `content/talks.json`. Leave the `talks` array empty when there is no strong match; the entire section will then be omitted. The four generated URLs are under `dist/research/` and are added to the sitemap automatically.
 
 ### Add a lab member
 
@@ -105,7 +122,7 @@ Open `http://localhost:4173`. Re-run the build after each content or template ch
 
 1. Put this package at the root of the GitHub repository named `zjfheart.github.io`.
 2. In the repository, open **Settings → Pages** and choose **GitHub Actions** as the source.
-3. Push to the `main` branch. The included workflow builds and deploys `dist/` automatically.
+3. Push to the `main` or `master` branch. The included workflow builds and deploys `dist/` automatically.
 4. Confirm the live homepage and `https://zjfheart.github.io/talks.html` after the workflow completes.
 
 The generated `dist/` directory is included so the site can also be uploaded to any static host without running the workflow.

@@ -6,6 +6,7 @@ from __future__ import annotations
 import datetime as dt
 import html
 import json
+import re
 import shutil
 from collections import defaultdict
 from pathlib import Path
@@ -16,8 +17,10 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "site.json"
 TALKS = ROOT / "content" / "talks.json"
+RESEARCH = ROOT / "content" / "research.json"
 INDEX_TEMPLATE = ROOT / "templates" / "index.html"
 TALKS_TEMPLATE = ROOT / "templates" / "talks.html"
+RESEARCH_TEMPLATE = ROOT / "templates" / "research.html"
 DIST = ROOT / "dist"
 
 
@@ -76,13 +79,104 @@ def render_projects(items: list[dict[str, object]]) -> str:
     for item in items:
         topics = "".join(f"<span>{esc(topic)}</span>" for topic in item["topics"])
         cards.append(
-            f'''<article class="project-card reveal">
+            f'''<a class="project-card reveal" href="research/{esc(item['slug'])}.html" aria-label="Explore {esc(item['title'])}">
   <span class="project-number">{esc(item['number'])}</span>
   <h3>{esc(item['title'])}</h3>
   <p class="project-question">{esc(item['question'])}</p>
   <p>{esc(item['description'])}</p>
   <div class="tag-list">{topics}</div>
+  <span class="project-link">Explore programme <b aria-hidden="true">→</b></span>
+</a>'''
+        )
+    return "\n".join(cards)
+
+
+def render_focus_cards(items: list[dict[str, str]]) -> str:
+    return "\n".join(
+        f'''<article class="research-focus-card">
+  <span>{index:02d}</span><h2>{esc(item['title'])}</h2><p>{esc(item['detail'])}</p>
 </article>'''
+        for index, item in enumerate(items, start=1)
+    )
+
+
+def display_year(paper: dict[str, object]) -> str:
+    return str(paper.get("displayYear") or paper["year"]).replace("-earlier", "")
+
+
+def venue_mark(venue: str) -> str:
+    words = venue.replace("Foundations and Trends in Privacy and Security", "FnT Privacy & Security").split()
+    return " ".join(words[:3])
+
+
+def render_research_papers(
+    references: list[dict[str, str]],
+    publications: dict[str, dict[str, object]],
+    highlighted: str,
+) -> str:
+    cards = []
+    for index, reference in enumerate(references, start=1):
+        paper = publications[reference["title"]]
+        award = f'<span class="award-badge">{esc(paper["award"])}</span>' if paper.get("award") else ""
+        links = [{"label": "Primary source", "url": str(paper["url"])}]
+        links.extend(item for item in paper.get("links", []) if item["url"] != paper["url"])
+        cards.append(
+            f'''<article class="research-paper">
+  <a class="research-paper-visual visual-{(index - 1) % 4 + 1}" href="{esc(paper['url'])}"{external_attrs(str(paper['url']))} aria-label="Open {esc(paper['title'])}">
+    <span>{esc(reference['label'])}</span><strong>{esc(display_year(paper))}</strong><em>{esc(venue_mark(str(paper['venue'])))}</em><i aria-hidden="true"></i>
+  </a>
+  <div class="research-paper-copy">
+    <p class="research-paper-meta">{esc(display_year(paper))} · {esc(paper['venue'])} {award}</p>
+    <h3><a href="{esc(paper['url'])}"{external_attrs(str(paper['url']))}>{esc(paper['title'])}</a></h3>
+    <p class="research-paper-authors">{render_authors(paper['authors'], highlighted)}</p>
+    <p class="research-paper-summary">{esc(reference['summary'])}</p>
+    {render_links(links, 'research-paper-links')}
+  </div>
+</article>'''
+        )
+    return "\n".join(cards)
+
+
+def render_research_talks(references: list[dict[str, str]], talks: dict[tuple[str, str], dict[str, str]]) -> str:
+    if not references:
+        return ""
+    cards = []
+    for reference in references:
+        item = talks[(reference["date"], reference["title"])]
+        video = f'<a href="{esc(item["video"])}" target="_blank" rel="noreferrer">Video ↗</a>' if item.get("video") else ""
+        cards.append(
+            f'''<article class="research-talk-card">
+  <time datetime="{esc(item['date'])}">{esc(pretty_date(item['date']))}</time>
+  <div><h3><a href="{esc(item['url'])}"{external_attrs(item['url'])}>{esc(item['title'])}</a></h3><p>{esc(item['event'])} · {esc(item['location'])}</p>{video}</div>
+</article>'''
+        )
+    return f'''<section class="research-talks section section-soft" aria-labelledby="related-talks-title">
+  <div class="shell research-inner">
+    <div class="research-section-heading"><div><p class="eyebrow">Related talks</p><h2 id="related-talks-title">The programme, explained in public.</h2></div><p>Selected talks that develop or communicate this research direction.</p></div>
+    <div class="research-talk-list">{''.join(cards)}</div>
+    <a class="research-text-link" href="../talks.html">Browse the complete talk archive →</a>
+  </div>
+</section>'''
+
+
+def render_research_axis(items: list[dict[str, object]], active_slug: str) -> str:
+    links = []
+    for item in items:
+        current = item["slug"] == active_slug
+        links.append(
+            f'''<li{' class="is-active"' if current else ''}><a href="{esc(item['slug'])}.html"{' aria-current="page"' if current else ''}><span>{esc(item['number'])}</span><strong>{esc(item['shortTitle'])}</strong></a></li>'''
+        )
+    return "".join(links)
+
+
+def render_research_navigation(items: list[dict[str, object]], active_slug: str) -> str:
+    cards = []
+    for item in items:
+        current = item["slug"] == active_slug
+        cards.append(
+            f'''<a class="research-nav-card{' is-active' if current else ''}" href="{esc(item['slug'])}.html"{' aria-current="page"' if current else ''}>
+  <span>{esc(item['number'])}</span><strong>{esc(item['shortTitle'])}</strong><small>{'Current programme' if current else 'Explore programme →'}</small>
+</a>'''
         )
     return "\n".join(cards)
 
@@ -223,8 +317,8 @@ def render_talk_archive(items: list[dict[str, str]]) -> str:
     return "\n".join(sections)
 
 
-def validate(data: dict[str, object], talks: list[dict[str, str]]) -> None:
-    required = {"site", "profile", "proof", "experience", "education", "engagements", "projects", "recruitment", "people", "publications", "talks", "teaching"}
+def validate(data: dict[str, object], talks: list[dict[str, str]], research: dict[str, object]) -> None:
+    required = {"site", "profile", "proof", "experience", "education", "engagements", "recruitment", "people", "publications", "talks", "teaching"}
     missing = required - data.keys()
     if missing:
         raise ValueError(f"Missing content keys: {', '.join(sorted(missing))}")
@@ -234,16 +328,41 @@ def validate(data: dict[str, object], talks: list[dict[str, str]]) -> None:
         raise ValueError(f"Unknown publication years: {', '.join(sorted(unknown))}")
     if not talks:
         raise ValueError("Talk archive cannot be empty")
+    directions = research.get("directions", [])
+    if len(directions) != 4:
+        raise ValueError("Research content must define exactly four directions")
+    slugs = [item["slug"] for item in directions]
+    if len(slugs) != len(set(slugs)) or any(not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug) for slug in slugs):
+        raise ValueError("Research slugs must be unique lowercase URL slugs")
+    publication_titles = [paper["title"] for paper in data["publications"]]
+    publications = set(publication_titles)
+    if len(publication_titles) != len(publications):
+        raise ValueError("Publication titles must be unique because research pages reference them by title")
+    talk_key_list = [(item["date"], item["title"]) for item in talks]
+    talk_keys = set(talk_key_list)
+    if len(talk_key_list) != len(talk_keys):
+        raise ValueError("Talk date/title pairs must be unique")
+    for direction in directions:
+        unknown_papers = {item["title"] for item in direction["papers"]} - publications
+        unknown_talks = {(item["date"], item["title"]) for item in direction.get("talks", [])} - talk_keys
+        if unknown_papers:
+            raise ValueError(f"Unknown publications in {direction['slug']}: {', '.join(sorted(unknown_papers))}")
+        if unknown_talks:
+            raise ValueError(f"Unknown talks in {direction['slug']}: {unknown_talks}")
 
 
 def main() -> None:
     data = json.loads(CONTENT.read_text(encoding="utf-8"))
     talk_archive_data = json.loads(TALKS.read_text(encoding="utf-8"))
-    validate(data, talk_archive_data)
+    research_data = json.loads(RESEARCH.read_text(encoding="utf-8"))
+    validate(data, talk_archive_data, research_data)
     site = data["site"]
     profile = data["profile"]
     about = data["about"]
     recruitment = data["recruitment"]
+    directions = research_data["directions"]
+    publications_by_title = {paper["title"]: paper for paper in data["publications"]}
+    talks_by_key = {(item["date"], item["title"]): item for item in talk_archive_data}
     publication_tabs, publication_panels = render_publications(data, profile["name"])
 
     DIST.mkdir(parents=True, exist_ok=True)
@@ -310,7 +429,9 @@ def main() -> None:
         "credential_count": str(len(data["credentials"])),
         "service_editorial": esc(data["service"]["editorial"]),
         "service_conferences": esc(data["service"]["conferences"]),
-        "project_cards": render_projects(data["projects"]),
+        "research_title": esc(research_data["title"]),
+        "research_intro": esc(research_data["intro"]),
+        "project_cards": render_projects(directions),
         "recruitment_status": esc(recruitment["status"]),
         "recruitment_title": esc(recruitment["title"]),
         "recruitment_intro": esc(recruitment["intro"]),
@@ -347,6 +468,65 @@ def main() -> None:
     talks_output = Template(TALKS_TEMPLATE.read_text(encoding="utf-8")).substitute(talks_values)
     (DIST / "talks.html").write_text(talks_output, encoding="utf-8")
 
+    research_out = DIST / "research"
+    research_out.mkdir(parents=True, exist_ok=True)
+    research_template = Template(RESEARCH_TEMPLATE.read_text(encoding="utf-8"))
+    for direction in directions:
+        canonical = f"{site_root}/research/{direction['slug']}.html"
+        paper_items = [publications_by_title[item["title"]] for item in direction["papers"]]
+        research_structured_data = json.dumps(
+            {
+                "@context": "https://schema.org",
+                "@type": "CollectionPage",
+                "name": direction["title"],
+                "description": direction["description"],
+                "url": canonical,
+                "isPartOf": {"@type": "WebSite", "name": profile["name"], "url": site_root + "/"},
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {"@type": "ListItem", "position": 1, "name": "Home", "item": site_root + "/"},
+                        {"@type": "ListItem", "position": 2, "name": "Research", "item": site_root + "/#projects"},
+                        {"@type": "ListItem", "position": 3, "name": direction["shortTitle"], "item": canonical},
+                    ],
+                },
+                "hasPart": [
+                    {"@type": "ScholarlyArticle", "name": paper["title"], "url": paper["url"]}
+                    for paper in paper_items
+                ],
+            },
+            ensure_ascii=False,
+            separators=(",", ":"),
+        ).replace("</", "<\\/")
+        research_values = {
+            "page_title": esc(f"{direction['title']} | {profile['name']}"),
+            "description": esc(direction["description"]),
+            "canonical": esc(canonical),
+            "name": esc(profile["name"]),
+            "email": esc(profile["email"]),
+            "scholar_url": esc(profile["scholar"]),
+            "number": esc(direction["number"]),
+            "short_title": esc(direction["shortTitle"]),
+            "title": esc(direction["title"]),
+            "question": esc(direction["question"]),
+            "overview": esc(direction["description"]),
+            "topics": "".join(f"<span>{esc(topic)}</span>" for topic in direction["topics"]),
+            "paper_count": str(len(direction["papers"])),
+            "talk_count_item": (
+                f'<span aria-hidden="true">·</span><strong>{len(direction["talks"])}</strong> directly related talks'
+                if direction.get("talks")
+                else ""
+            ),
+            "focus_cards": render_focus_cards(direction["focus"]),
+            "paper_cards": render_research_papers(direction["papers"], publications_by_title, profile["name"]),
+            "talks_section": render_research_talks(direction.get("talks", []), talks_by_key),
+            "research_axis": render_research_axis(directions, direction["slug"]),
+            "research_navigation": render_research_navigation(directions, direction["slug"]),
+            "structured_data": research_structured_data,
+            "year": str(dt.date.today().year),
+        }
+        (research_out / f"{direction['slug']}.html").write_text(research_template.substitute(research_values), encoding="utf-8")
+
     shutil.copy2(ROOT / "src" / "styles.css", assets_out / "styles.css")
     shutil.copy2(ROOT / "src" / "app.js", assets_out / "app.js")
     shutil.copy2(ROOT / profile["portrait"], assets_out / "jingfeng-zhang.jpg")
@@ -357,16 +537,21 @@ def main() -> None:
         f"User-agent: *\nAllow: /\nSitemap: {site['url'].rstrip('/')}/sitemap.xml\n",
         encoding="utf-8",
     )
+    sitemap_research = "\n".join(
+        f"  <url><loc>{html.escape(site_root + '/research/' + direction['slug'] + '.html')}</loc></url>"
+        for direction in directions
+    )
     (DIST / "sitemap.xml").write_text(
         f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>{html.escape(site['url'].rstrip('/') + '/')}</loc></url>
   <url><loc>{html.escape(site['url'].rstrip('/') + '/talks.html')}</loc></url>
+{sitemap_research}
 </urlset>
 ''',
         encoding="utf-8",
     )
-    print(f"Built {DIST / 'index.html'} and {DIST / 'talks.html'}")
+    print(f"Built homepage, talk archive, and {len(directions)} research pages in {DIST}")
 
 
 if __name__ == "__main__":
