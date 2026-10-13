@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f7faff">
+  <meta name="theme-color" content="#f7f9fc">
   <meta name="description" content="$description">
   <meta property="og:type" content="website">
   <meta property="og:title" content="$page_title">
@@ -56,8 +56,7 @@
           <p class="eyebrow">$focus</p>
           <h1 id="hero-title">$headline</h1>
           <p class="hero-role"><strong>$name</strong> · $role<br>$institution</p>
-          <p class="hero-summary">$summary</p>
-          <p class="hero-evidence" aria-label="Selected research distinctions"><span>ICLR Oral</span><span>NeurIPS Spotlight</span><span>RIKEN Ohbu Award</span></p>
+          <ul class="hero-badges" aria-label="Selected academic roles and distinctions">$hero_badges</ul>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button button-primary" href="#join">Apply to RISE-AI <span aria-hidden="true">↓</span></a>
             <a class="button button-secondary" href="#projects">Explore the research</a>
@@ -71,7 +70,7 @@
         </div>
         <figure class="portrait-wrap reveal">
           <div class="portrait-backdrop" aria-hidden="true"></div>
-          <img class="portrait" src="$portrait_url" alt="$portrait_alt" width="1024" height="1280" fetchpriority="high">
+          <img class="portrait" src="$portrait_url" srcset="$portrait_url 1024w" sizes="(max-width: 560px) 92vw, (max-width: 900px) 400px, 420px" alt="$portrait_alt" width="1024" height="1536" decoding="async" fetchpriority="high">
           <figcaption><span class="status-dot" aria-hidden="true"></span>Based in Shanghai · working globally</figcaption>
         </figure>
       </div>
@@ -169,7 +168,7 @@
       <div class="shell publication-shell">
         <div class="section-heading section-heading-split reveal">
           <div><p class="eyebrow">Selected publications</p><h2 id="publications-title">Research, organised by year.</h2></div>
-          <p>This is a curated, identity-checked record. For the complete and most current list, visit <a href="$scholar_url" target="_blank" rel="noreferrer">Google Scholar ↗</a>.</p>
+          <p>This is a curated record. For the complete and most current list, visit <a href="$scholar_url" target="_blank" rel="noreferrer">Google Scholar ↗</a>.</p>
         </div>
         <div class="publication-browser reveal">
           <div class="year-tabs" role="tablist" aria-label="Publication year" data-year-tabs>$publication_tabs</div>

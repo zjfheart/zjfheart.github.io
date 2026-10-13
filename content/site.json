@@ -12,8 +12,28 @@
     "institution": "Fudan University",
     "affiliation": "College of Intelligent Robotics and Advanced Manufacturing · Institute of Trustworthy Embodied AI",
     "focus": "Trustworthy Machine Learning · Safe Embodied AI",
-    "headline": "Building trustworthy AI for high-stakes decisions",
-    "summary": "I lead RISE-AI Lab at Fudan University, where we study Trustworthy Machine Learning & Safe Embodied Intelligence",
+    "headline": "Building Responsible Intelligence for Safe Embodied AI",
+    "summary": "I lead RISE-AI Lab at Fudan University, where we study trustworthy machine learning and safe embodied AI.",
+    "heroBadges": [
+      {
+        "title": "RISE-AI Lab",
+        "detail": "Principal Investigator",
+        "url": "#people",
+        "tone": "primary"
+      },
+      {
+        "title": "ICML · NeurIPS · ICLR",
+        "detail": "Area Chair",
+        "url": "#service",
+        "tone": "leadership"
+      },
+      {
+        "title": "National Young Talent",
+        "detail": "Shanghai High-Level Overseas Talent",
+        "url": "https://ciram.fudan.edu.cn/bd/95/c50802a769429/page.htm",
+        "tone": "primary"
+      }
+    ],
     "portrait": "assets/jingfeng-zhang.jpg",
     "portraitAlt": "Portrait of Jingfeng Zhang",
     "email": "zjf@fudan.edu.cn",
@@ -24,7 +44,7 @@
   },
   "proof": [
     {"value": "30+ Papers", "label": "at leading AI venues", "detail": "ICML, NeurIPS, ICLR and IEEE TPAMI", "url": "https://scholar.google.com/citations?user=NS0P1FkAAAAJ&hl=en"},
-    {"value": "Research Distinctions", "label": "Oral · Spotlight · Best", "detail": "ICLR 2021 · NeurIPS 2023 · AAAI 2025", "url": "https://scholar.google.com/citations?user=NS0P1FkAAAAJ&hl=en"},
+    {"value": "Research Distinctions", "label": "Oral · Spotlight · Best Paper", "detail": "ICLR 2021 · NeurIPS 2023 · AAAI 2025", "url": "https://scholar.google.com/citations?user=NS0P1FkAAAAJ&hl=en"},
     {"value": "RIKEN Ohbu Award", "label": "Research recognition", "detail": "RIKEN AIP, FY2021", "url": "https://aip.riken.jp/news/fy2021_riken_ohbu_award/?lang=en"},
     {"value": "8 countries", "label": "Global experiences", "detail": "China · U.K. · U.S.A. · Singapore · Japan · New Zealand · Saudi Arabia · U.A.E.", "url": "#about"}
   ],
@@ -60,7 +80,8 @@
     {"kicker": "International recognition", "title": "KAUST Rising Stars in AI", "detail": "Selected speaker · “Adversarial Learning: Foundations and Applications,” 2023", "url": "https://cemse.kaust.edu.sa/ai/aii-symp-2023"},
     {"kicker": "International fellowship", "title": "DAAD AInet Fellow", "detail": "Selected for the April 2021 AI and Data Science cohort, representing RIKEN AIP", "url": "https://www.daad.de/en/the-daad/postdocnet/fellows/fellows/"},
     {"kicker": "International collaboration", "title": "Royal Society Te Apārangi", "detail": "Catalyst: Seeding project on robust and private multimodal learning", "url": "https://www.royalsociety.org.nz/what-we-do/funds-and-opportunities/catalyst-fund/catalyst-seeding/recipients-2/recipients-july-2024"},
-    {"kicker": "Competitive funding", "title": "JST ACT-X & JSPS KAKENHI", "detail": "Principal investigator on adversarial robustness projects in Japan", "url": "https://www.jst.go.jp/kisoken/act-x/project/111F003/111F003_2021.html"},
+    {"kicker": "Competitive funding", "title": "JST ACT-X", "detail": "Project Lead · Adversarial-training robustness · 2021–2023 · JPMJAX21AF", "url": "https://www.jst.go.jp/kisoken/act-x/project/111F003/111F003_2021.html"},
+    {"kicker": "Competitive funding", "title": "JSPS KAKENHI", "detail": "Principal Investigator · Robust learning with imperfect data · 2022–2024 · 22K17955", "url": "https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-22K17955"},
     {"kicker": "Academic leadership", "title": "Editor & Area Chair", "detail": "IEEE TAI / Neural Networks · ICML / NeurIPS / ICLR", "url": "#service"},
     {"kicker": "Academic volume", "title": "Advances in Artificial Intelligence", "detail": "Co-edited academic volume published by Springer Nature, 2026", "url": "https://link.springer.com/book/10.1007/978-3-032-12362-6"}
   ],

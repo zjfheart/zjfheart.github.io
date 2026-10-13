@@ -44,7 +44,7 @@ A fast, mobile-first, English academic homepage for Jingfeng Zhang and RISE-AI L
 
 Most updates require editing only [`content/site.json`](content/site.json):
 
-- `profile`: identity, affiliation, email, portrait, and academic profiles
+- `profile`: identity, hero badges, affiliation, portrait, and academic profiles
 - `experience` and `education`: primary appointments and degrees
 - `engagements`: exchanges, visits, internships, and part-time roles
 - `proof` and `credentials`: evidence shown near the top of the page
@@ -140,7 +140,7 @@ The generated `dist/` directory is included so the site can also be uploaded to 
 - Add verified student names and photos to `people.members` when ready.
 - Confirm the current recruitment status and application instructions each admission cycle.
 - Review newly added publications manually; common author databases currently merge several researchers named Jingfeng Zhang.
-- When replacing the portrait, keep the filename `assets/jingfeng-zhang.jpg` and use a 4:5 crop so the hero and People card remain aligned.
+- When replacing the portrait, keep the filename `assets/jingfeng-zhang.jpg`. The hero preserves the image's natural aspect ratio, so use an uncropped vertical portrait with enough space around the face; at least 1024 px wide is recommended for Retina displays.
 
 ## License
 

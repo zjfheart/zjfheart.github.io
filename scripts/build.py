@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import html
 import json
 import re
@@ -52,6 +53,18 @@ def render_proof(items: list[dict[str, str]]) -> str:
   <span class="proof-label">{esc(item['label'])}</span>
   <span class="proof-detail">{esc(item['detail'])}</span>
 </a>'''
+        )
+    return "\n".join(cards)
+
+
+def render_hero_badges(items: list[dict[str, str]]) -> str:
+    cards = []
+    for item in items:
+        tone = re.sub(r"[^a-z0-9-]", "", item.get("tone", "primary").lower()) or "primary"
+        cards.append(
+            f'''<li><a class="hero-badge hero-badge-{tone}" href="{esc(item['url'])}"{external_attrs(item['url'])}>
+  <strong>{esc(item['title'])}</strong><span>{esc(item['detail'])}</span>
+</a></li>'''
         )
     return "\n".join(cards)
 
@@ -322,6 +335,9 @@ def validate(data: dict[str, object], talks: list[dict[str, str]], research: dic
     missing = required - data.keys()
     if missing:
         raise ValueError(f"Missing content keys: {', '.join(sorted(missing))}")
+    profile = data["profile"]
+    if not profile.get("heroBadges"):
+        raise ValueError("Profile must define at least one hero badge")
     allowed_years = set(data["publicationYears"])
     unknown = {paper["year"] for paper in data["publications"]} - allowed_years
     if unknown:
@@ -371,7 +387,10 @@ def main() -> None:
 
     application_subject = quote(recruitment["subject"])
     site_root = site["url"].rstrip("/")
-    portrait_absolute = site_root + "/" + profile["portrait"]
+    portrait_path = ROOT / profile["portrait"]
+    portrait_version = hashlib.sha256(portrait_path.read_bytes()).hexdigest()[:12]
+    portrait_url = f'{profile["portrait"]}?v={portrait_version}'
+    portrait_absolute = site_root + "/" + portrait_url
     structured_data = json.dumps(
         {
             "@context": "https://schema.org",
@@ -403,11 +422,12 @@ def main() -> None:
         "name": esc(profile["name"]),
         "focus": esc(profile["focus"]),
         "headline": esc(profile["headline"]),
+        "hero_badges": render_hero_badges(profile["heroBadges"]),
         "role": esc(profile["role"]),
         "institution": esc(profile["institution"]),
         "affiliation": esc(profile["affiliation"]),
         "summary": esc(profile["summary"]),
-        "portrait_url": esc(profile["portrait"]),
+        "portrait_url": esc(portrait_url),
         "portrait_absolute": esc(portrait_absolute),
         "portrait_alt": esc(profile["portraitAlt"]),
         "email": esc(profile["email"]),
