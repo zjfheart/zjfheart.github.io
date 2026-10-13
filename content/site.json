@@ -82,12 +82,19 @@
     {"kicker": "International collaboration", "title": "Royal Society Te Apārangi", "detail": "Catalyst: Seeding project on robust and private multimodal learning", "url": "https://www.royalsociety.org.nz/what-we-do/funds-and-opportunities/catalyst-fund/catalyst-seeding/recipients-2/recipients-july-2024"},
     {"kicker": "Competitive funding", "title": "JST ACT-X", "detail": "Project Lead · Adversarial-training robustness · 2021–2023 · JPMJAX21AF", "url": "https://www.jst.go.jp/kisoken/act-x/project/111F003/111F003_2021.html"},
     {"kicker": "Competitive funding", "title": "JSPS KAKENHI", "detail": "Principal Investigator · Robust learning with imperfect data · 2022–2024 · 22K17955", "url": "https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-22K17955"},
+    {"kicker": "Academic community building", "title": "Founder, TrustML YSS", "detail": "Founded at RIKEN AIP in 2022 · Young Scientist Seminars in trustworthy machine learning", "url": "https://trustmlresearch.github.io/", "sourceNote": "Founder role user-confirmed; RIKEN AIP records confirm the January 2022 launch and institutional support"},
+    {"kicker": "Conference leadership", "title": "AJCAI 2026 Program Chair", "detail": "Australasian Joint Conference on Artificial Intelligence · Auckland, New Zealand", "url": "https://ajcai26.org/committee.html"},
+    {"kicker": "Conference leadership", "title": "IEEE CAI 2024 Workshop Co-Chair", "detail": "IEEE Conference on Artificial Intelligence · Singapore", "url": "https://ieeecai.com/2024/organising-committee/"},
+    {"kicker": "Workshop leadership", "title": "AIGC 2023 Workshop Chair", "detail": "Foundation Models & Fine-tuning Strategies · Shanghai, China", "url": "https://icaigc.org/workshops.html"},
+    {"kicker": "Conference leadership", "title": "SOICT 2023 Track Chair", "detail": "AI Foundations & Big Data · Ho Chi Minh City, Vietnam", "url": "https://soict.org/2023/committees/organizing-committee/"},
+    {"kicker": "Conference leadership", "title": "IEEE MIPR 2025 Publicity Chair", "detail": "Multimedia Information Processing & Retrieval · San Jose, USA", "url": "https://sites.google.com/view/mipr-2025/committees/organizing-committee"},
+    {"kicker": "Workshop leadership", "title": "ACML WSL Program Co-Chair", "detail": "Weakly Supervised Learning workshops · ACML 2021 & 2022", "url": "https://wsl-workshop.github.io/acml22.html"},
     {"kicker": "Academic leadership", "title": "Editor & Area Chair", "detail": "IEEE TAI / Neural Networks · ICML / NeurIPS / ICLR", "url": "#service"},
     {"kicker": "Academic volume", "title": "Advances in Artificial Intelligence", "detail": "Co-edited academic volume published by Springer Nature, 2026", "url": "https://link.springer.com/book/10.1007/978-3-032-12362-6"}
   ],
   "service": {
     "editorial": "Associate Editor, IEEE Transactions on Artificial Intelligence and Neural Networks",
-    "conferences": "Area Chair, ICML, NeurIPS and ICLR · Senior Program Committee, AAAI"
+    "conferences": "Program Chair, AJCAI 2026 · Workshop Co-Chair, IEEE CAI 2024 · Workshop Chair, AIGC 2023 · Track Chair, SOICT 2023 · Publicity Chair, IEEE MIPR 2025 · Program Co-Chair, ACML WSL 2021–2022 · Area Chair, ICML, NeurIPS and ICLR · Senior Program Committee, AAAI"
   },
   "recruitment": {
     "status": "Open to strong prospective students",
