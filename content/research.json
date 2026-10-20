@@ -1,7 +1,7 @@
 {
   "eyebrow": "Research agenda",
-  "title": "Four layers of trustworthy intelligence.",
-  "intro": "The programme moves from learning theory to data governance, model and agent security, and finally trustworthy behaviour in the physical world.",
+  "title": "From learning theory to trustworthy AI in the physical world.",
+  "intro": "Our research connects four areas: learning theory, data governance, model and agent security, and safe embodied intelligence.",
   "directions": [
     {
       "number": "01",

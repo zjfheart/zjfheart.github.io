@@ -52,7 +52,7 @@
     "eyebrow": "Research with the TrustAI mandate",
     "title": "Trustworthy AI, from learning theories to embodied intelligence.",
     "body": "My research asks a practical question: how can an intelligent system stay dependable when its data are imperfect, its environment shifts, or an adversary actively tries to break it? I develop learning principles, evaluations, and defenses that make failure visible—and safety actionable.",
-    "bio": "I am an Associate Professor and PhD Supervisor at Fudan University. My primary career path includes a permanent lectureship at the University of Auckland and research appointments at RIKEN AIP, following a bachelor's degree from Shandong University and a PhD from the National University of Singapore. Complementary international experience includes research roles with NYU Abu Dhabi and KAUST, internships at IBM Research, Singapore and RIKEN AIP, part-time teaching at the University of Tokyo and Ochanomizu University, and undergraduate study at UCLA and the University of Cambridge."
+    "bio": "I am an Associate Professor and PhD Supervisor at Fudan University. I earned my bachelor's degree at Shandong University and my PhD at the National University of Singapore, where I was advised by Professor Mohan Kankanhalli. I then worked with Professor Masashi Sugiyama as a postdoctoral researcher at RIKEN AIP, later becoming a research scientist. Before joining Fudan, I held a permanent lectureship at the University of Auckland. My other international experience includes research roles at NYU Abu Dhabi and KAUST, internships at IBM Research Singapore and RIKEN AIP, part-time teaching at the University of Tokyo and Ochanomizu University, and undergraduate exchange and summer study at UCLA and the University of Cambridge."
   },
   "experience": [
     {"years": "2026-Current", "role": "Associate Professor & PhD Supervisor", "place": "Fudan University", "url": "https://ciram.fudan.edu.cn/bd/95/c50802a769429/page.htm"},
@@ -98,7 +98,7 @@
   },
   "recruitment": {
     "status": "Open to strong prospective students",
-    "title": "Join RISE-AI and work on problems where reliability truly matters.",
+    "title": "Join RISE-AI to make intelligent systems safer in the real world.",
     "intro": "We welcome prospective master's students, direct-entry PhD students, research interns, and visiting collaborators who want to build rigorous and useful trustworthy AI.",
     "quote": "Excellent research grows from sustained effort, not last-minute sprints; from teamwork, not individual heroics.",
     "tracks": [
@@ -121,7 +121,7 @@
   },
   "people": {
     "title": "A rigorous, open, and collaborative lab.",
-    "intro": "RISE-AI combines high standards with academic freedom and warm, direct mentorship. We value rigorous reasoning, reproducible systems, intellectual generosity, and research that holds up beyond the benchmark.",
+    "intro": "At RISE-AI, we pair rigorous research with academic freedom and attentive mentorship. We value sound reasoning, reproducible results, generous collaboration, and work that remains useful beyond a benchmark.",
     "pi": {"name": "Jingfeng Zhang", "role": "Principal Investigator", "focus": "Trustworthy machine learning · safe embodied AI", "image": "assets/jingfeng-zhang.jpg"},
     "members": []
   },
