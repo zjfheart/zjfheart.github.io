@@ -47,11 +47,13 @@ def render_links(items: list[dict[str, str]], class_name: str = "item-links") ->
 def render_proof(items: list[dict[str, str]]) -> str:
     cards = []
     for item in items:
+        note = f'<span class="proof-note">{esc(item["note"])}</span>' if item.get("note") else ""
         cards.append(
             f'''<a class="proof-card" href="{esc(item['url'])}"{external_attrs(item['url'])}>
   <span class="proof-value">{esc(item['value'])}</span>
   <span class="proof-label">{esc(item['label'])}</span>
   <span class="proof-detail">{esc(item['detail'])}</span>
+  {note}
 </a>'''
         )
     return "\n".join(cards)

@@ -43,10 +43,10 @@
     "github": "https://github.com/zjfheart"
   },
   "proof": [
-    {"value": "30+ Papers", "label": "At leading AI venues", "detail": "ICML · NeurIPS · ICLR · IEEE TPAMI", "url": "https://scholar.google.com/citations?user=NS0P1FkAAAAJ&hl=en"},
+    {"value": "30+ Papers", "label": "At leading AI venues", "detail": "ICML · NeurIPS · ICLR · IEEE TPAMI", "note": "Including ICLR Oral and NeurIPS Spotlight", "url": "https://scholar.google.com/citations?user=NS0P1FkAAAAJ&hl=en"},
     {"value": "RIKEN Ohbu Award", "label": "Researcher Incentive Award", "detail": "RIKEN AIP · FY2021", "url": "https://aip.riken.jp/news/fy2021_riken_ohbu_award/?lang=en"},
     {"value": "Eight Countries", "label": "International experience", "detail": "China · U.K. · U.S. · Singapore · Japan · New Zealand · Saudi Arabia · U.A.E.", "url": "#about"},
-    {"value": "JST ACT-X · JSPS KAKENHI", "label": "Competitive research funding", "detail": "Project Lead · Principal Investigator", "url": "#service"}
+    {"value": "JST ACT-X · JSPS KAKENHI", "label": "Competitive research funding", "detail": "Principal Investigator", "url": "#service"}
   ],
   "about": {
     "eyebrow": "Research with the TrustAI mandate",
