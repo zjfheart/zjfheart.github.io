@@ -109,7 +109,7 @@ def render_projects(items: list[dict[str, object]]) -> str:
 def render_focus_cards(items: list[dict[str, str]]) -> str:
     return "\n".join(
         f'''<article class="research-focus-card">
-  <span>{index:02d}</span><h2>{esc(item['title'])}</h2><p>{esc(item['detail'])}</p>
+  <span>{index:02d}</span><h3>{esc(item['title'])}</h3><p>{esc(item['detail'])}</p>
 </article>'''
         for index, item in enumerate(items, start=1)
     )
@@ -117,11 +117,6 @@ def render_focus_cards(items: list[dict[str, str]]) -> str:
 
 def display_year(paper: dict[str, object]) -> str:
     return str(paper.get("displayYear") or paper["year"]).replace("-earlier", "")
-
-
-def venue_mark(venue: str) -> str:
-    words = venue.replace("Foundations and Trends in Privacy and Security", "FnT Privacy & Security").split()
-    return " ".join(words[:3])
 
 
 def render_research_papers(
@@ -133,15 +128,14 @@ def render_research_papers(
     for index, reference in enumerate(references, start=1):
         paper = publications[reference["title"]]
         award = f'<span class="award-badge">{esc(paper["award"])}</span>' if paper.get("award") else ""
-        links = [{"label": "Primary source", "url": str(paper["url"])}]
+        primary_label = "Preprint" if "preprint" in str(paper["venue"]).lower() else "Paper"
+        links = [{"label": primary_label, "url": str(paper["url"])}]
         links.extend(item for item in paper.get("links", []) if item["url"] != paper["url"])
         cards.append(
             f'''<article class="research-paper">
-  <a class="research-paper-visual visual-{(index - 1) % 4 + 1}" href="{esc(paper['url'])}"{external_attrs(str(paper['url']))} aria-label="Open {esc(paper['title'])}">
-    <span>{esc(reference['label'])}</span><strong>{esc(display_year(paper))}</strong><em>{esc(venue_mark(str(paper['venue'])))}</em><i aria-hidden="true"></i>
-  </a>
+  <div class="research-paper-index"><span>{index:02d}</span><strong>{esc(display_year(paper))}</strong><small>{esc(reference['label'])}</small></div>
   <div class="research-paper-copy">
-    <p class="research-paper-meta">{esc(display_year(paper))} · {esc(paper['venue'])} {award}</p>
+    <p class="research-paper-meta">{esc(paper['venue'])} {award}</p>
     <h3><a href="{esc(paper['url'])}"{external_attrs(str(paper['url']))}>{esc(paper['title'])}</a></h3>
     <p class="research-paper-authors">{render_authors(paper['authors'], highlighted)}</p>
     <p class="research-paper-summary">{esc(reference['summary'])}</p>
@@ -167,7 +161,7 @@ def render_research_talks(references: list[dict[str, str]], talks: dict[tuple[st
         )
     return f'''<section class="research-talks section section-soft" aria-labelledby="related-talks-title">
   <div class="shell research-inner">
-    <div class="research-section-heading"><div><p class="eyebrow">Related talks</p><h2 id="related-talks-title">The programme, explained in public.</h2></div><p>Selected talks that develop or communicate this research direction.</p></div>
+    <div class="research-section-heading compact-heading"><div><p class="eyebrow">Talks & lectures</p><h2 id="related-talks-title">Talks on this research.</h2></div></div>
     <div class="research-talk-list">{''.join(cards)}</div>
     <a class="research-text-link" href="../talks.html">Browse the complete talk archive →</a>
   </div>
@@ -266,10 +260,21 @@ def render_publications(data: dict[str, object], highlighted: str) -> tuple[str,
   {render_links(paper.get('links', []), 'publication-links')}
 </article>'''
             )
-        empty = '<p class="empty-state">No selected publications are listed for this year yet.</p>'
+        count = len(publications)
+        visible_count = min(5, count)
+        if count > visible_count:
+            scroll_message = f"Showing {visible_count} of {count} papers · scroll within this year"
+        else:
+            scroll_message = f"Showing all {count} papers for this year"
+        rows = "".join(publications)
+        content = (
+            f'''<p class="scroll-note publication-scroll-note" id="publication-scroll-note-{esc(year)}">{esc(scroll_message)}</p>
+  <div class="publication-list vertical-scroll-list" role="region" tabindex="0" aria-label="{esc(label)} publications" aria-describedby="publication-scroll-note-{esc(year)}" data-visible-items="5" data-vertical-scroll>{rows}</div>'''
+            if publications else '<p class="empty-state">No selected publications are listed for this year yet.</p>'
+        )
         panels.append(
             f'''<div class="publication-panel" role="tabpanel" id="panel-{esc(year)}" aria-labelledby="tab-{esc(year)}" data-publication-panel="{esc(year)}"{' hidden' if not selected else ''}>
-  {''.join(publications) if publications else empty}
+  {content}
 </div>'''
         )
     return "\n".join(tabs), "\n".join(panels)
@@ -530,12 +535,11 @@ def main() -> None:
             "number": esc(direction["number"]),
             "short_title": esc(direction["shortTitle"]),
             "title": esc(direction["title"]),
-            "question": esc(direction["question"]),
-            "overview": esc(direction["description"]),
+            "page_intro": esc(direction["pageIntro"]),
             "topics": "".join(f"<span>{esc(topic)}</span>" for topic in direction["topics"]),
             "paper_count": str(len(direction["papers"])),
             "talk_count_item": (
-                f'<span aria-hidden="true">·</span><strong>{len(direction["talks"])}</strong> directly related talks'
+                f'<span aria-hidden="true">·</span><strong>{len(direction["talks"])}</strong> related talks'
                 if direction.get("talks")
                 else ""
             ),

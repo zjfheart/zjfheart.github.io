@@ -32,11 +32,12 @@
   const verticalScrollRegions = [...document.querySelectorAll('[data-vertical-scroll]')];
   const sizeVerticalScrollRegions = () => {
     verticalScrollRegions.forEach(region => {
+      if (region.closest('[hidden]')) return;
       const visibleItems = Number.parseInt(region.dataset.visibleItems || '5', 10);
       const items = [...region.children].slice(0, visibleItems);
       if (!items.length) return;
       const visibleHeight = items.reduce((total, item) => total + item.getBoundingClientRect().height, 0);
-      region.style.setProperty('--experience-window-height', `${Math.ceil(visibleHeight + 1)}px`);
+      region.style.setProperty('--vertical-window-height', `${Math.ceil(visibleHeight + 1)}px`);
     });
   };
 
@@ -121,6 +122,7 @@
     panels.forEach(panel => {
       panel.hidden = panel.dataset.publicationPanel !== year;
     });
+    scheduleVerticalResize();
     if (updateUrl) {
       const url = new URL(window.location.href);
       url.searchParams.set('year', year);

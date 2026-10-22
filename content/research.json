@@ -10,6 +10,7 @@
       "title": "Learning Theory: Trustworthy AI Foundations",
       "question": "What makes learning reliable under adversarial data, supervision, and evaluation?",
       "description": "Core algorithms and theory for trustworthy machine learning, from adversarial training and robust generalisation to representation alignment.",
+      "pageIntro": "We study why adversarially trained models succeed on some examples and fail on others. Our work spans generalisation, representation learning, and training methods that account for the geometry and distribution of the data.",
       "topics": [
         "Adversarial learning",
         "Robust generalisation",
@@ -19,15 +20,15 @@
       "focus": [
         {
           "title": "Robust generalisation",
-          "detail": "Understand when robustness transfers beyond the training sample—and why accuracy and robustness sometimes compete."
+          "detail": "Examine when adversarial training generalises, including the accuracy–robustness trade-off and the role of sample geometry."
         },
         {
           "title": "Reliable representations",
-          "detail": "Study how contrastive and foundation-model representations become aligned, stable, and diagnostically useful."
+          "detail": "Analyse how individual training examples affect contrastive representations and where misalignment arises."
         },
         {
-          "title": "Principled intervention",
-          "detail": "Turn theoretical failure analysis into training objectives, sample-selection rules, and measurable guarantees."
+          "title": "Robust training methods",
+          "detail": "Use distributional discrepancy, pixel reweighting, and coreset selection to improve or simplify robust training."
         }
       ],
       "papers": [
@@ -92,6 +93,7 @@
       "title": "AI Governance: Data Safety & Content Integrity",
       "question": "How do we keep data-driven systems reliable when data can be poisoned, biased, noisy, or private?",
       "description": "Security and governance at the data layer: poisoning and backdoors, algorithmic bias, privacy leakage, and defensible data use.",
+      "pageIntro": "Training data shape a model long before it reaches users. We investigate poisoning, bias, and privacy leakage in multimodal and generative systems, and develop ways to evaluate and reduce these risks.",
       "topics": [
         "Data poisoning",
         "Algorithmic fairness",
@@ -101,15 +103,15 @@
       "focus": [
         {
           "title": "Poisoning & backdoors",
-          "detail": "Reveal how manipulated samples, labels, and physical triggers can redirect learning or downstream behaviour."
+          "detail": "Test how manipulated training examples affect multimodal models and downstream foundation-model tasks."
         },
         {
           "title": "Bias & fair generation",
-          "detail": "Measure and mitigate systematic disparities in generative and predictive systems."
+          "detail": "Examine fairness in text-to-image generation and methods for reducing disparities in generated outputs."
         },
         {
           "title": "Privacy-preserving adaptation",
-          "detail": "Reduce information leakage while retaining the practical value of fine-tuning and collaborative learning."
+          "detail": "Study membership-inference and model-inversion risks in model adaptation and federated learning."
         }
       ],
       "papers": [
@@ -162,6 +164,7 @@
       "title": "Model Security: Local LLMs & Trustworthy Agents",
       "question": "How can locally deployed models and agents be evaluated, aligned, and controlled before they act?",
       "description": "Safety for LLMs and agentic systems, spanning local and private deployment, jailbreak robustness, alignment, and repeatable evaluation harnesses.",
+      "pageIntro": "Our published work examines jailbreaks, adversarial preferences, noisy feedback, and robust agent representations. We are bringing those findings into repeatable evaluations for language models and agents, including systems deployed locally.",
       "topics": [
         "Local deployment",
         "LLM alignment",
@@ -171,15 +174,15 @@
       "focus": [
         {
           "title": "Local & private deployment",
-          "detail": "Design model adaptation and operating patterns that keep sensitive workloads closer to their owners."
+          "detail": "Study model adaptation and evaluation choices for settings where data or models need to remain under local control."
         },
         {
           "title": "Robust alignment",
-          "detail": "Stress-test preferences, prompts, and safety policies under adversarial or noisy feedback."
+          "detail": "Test how prompt attacks, adversarial preferences, and noisy feedback affect model behaviour."
         },
         {
           "title": "Agent evaluation harnesses",
-          "detail": "Build repeatable tests around tools, memory, plans, and failure recovery before agentic systems are deployed."
+          "detail": "Develop repeatable checks for agent behaviour before systems with tools or memory are put into use."
         }
       ],
       "papers": [
@@ -223,6 +226,7 @@
       "title": "Embodied Intelligence: Trustworthy Multimodal Robotics",
       "question": "How can intelligent agents remain safe when perception becomes physical action?",
       "description": "Trust mechanisms for vision-language-action models and embodied agents, including inference-time safeguards, adversarial testing, and physical-world backdoors.",
+      "pageIntro": "Embodied systems turn model outputs into physical actions. Our current work studies safety checks for vision-language-action models, adversarial inputs, and backdoor attacks carried by physical objects.",
       "topics": [
         "Embodied AI",
         "VLA safety",
@@ -232,15 +236,15 @@
       "focus": [
         {
           "title": "Inference-time safeguards",
-          "detail": "Detect and regulate unsafe concepts while an embodied policy is deciding what action to take."
+          "detail": "Investigate concept-based checks that can be applied while a vision-language-action model is making a decision."
         },
         {
           "title": "Adversarial VLA evaluation",
-          "detail": "Expose model-agnostic failure modes across vision, language, and action interfaces."
+          "detail": "Test attacks and defences that transfer across different vision-language-action models."
         },
         {
           "title": "Physical-world threat models",
-          "detail": "Study how ordinary-looking objects and environmental cues can trigger goal-directed unsafe behaviour."
+          "detail": "Examine whether physical objects can act as backdoor triggers for goal-directed robot behaviour."
         }
       ],
       "papers": [
